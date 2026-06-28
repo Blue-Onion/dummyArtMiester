@@ -24,23 +24,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   MoreVertical,
-  Shield,
   ShieldAlert,
   Ban,
   Search,
   Users,
-  ShieldCheck,
   AlertCircle,
   UserCheck,
   UserX,
   RotateCcw,
-  Star,
-  Crown,
-  Medal,
-  Wrench,
-  Megaphone,
-  Pen,
-  UserRound,
 } from "lucide-react";
 import useFetch from "@/hooks/useFetch";
 import { changeUserRoleStatus } from "@/service/admin";
@@ -54,18 +45,9 @@ import {
   canAssignRoles,
   getRoleWeight,
 } from "@/lib/roles";
+import { RoleBadge, ROLE_ICONS } from "@/components/RoleBadge";
+import { UserRound } from "lucide-react";
 import Link from "next/link";
-
-const ROLE_ICONS = {
-  [ROLES.PRESIDENT]: Crown,
-  [ROLES.VICE_PRESIDENT]: Star,
-  [ROLES.GENERAL_SECRETARY]: Shield,
-  [ROLES.LOGISTIC]: Wrench,
-  [ROLES.SOCIAL_MEDIA_HEAD]: Megaphone,
-  [ROLES.CONTENT_HEAD]: Pen,
-  [ROLES.CORE_MEMBER]: Medal,
-  [ROLES.MEMBER]: UserRound,
-};
 
 const ManageAccount = ({ users }) => {
   const currUser = useAuthStore((state) => state.user);
@@ -354,26 +336,6 @@ const ManageAccount = ({ users }) => {
             }
           };
 
-          const RoleIcon = ROLE_ICONS[user.Role] || UserRound;
-
-          const roleBadgeColors = {
-            [ROLES.PRESIDENT]:
-              "bg-amber-500/10 text-amber-400 border-amber-500/20",
-            [ROLES.VICE_PRESIDENT]:
-              "bg-blue-500/10 text-blue-400 border-blue-500/20",
-            [ROLES.GENERAL_SECRETARY]:
-              "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
-            [ROLES.LOGISTIC]: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
-            [ROLES.SOCIAL_MEDIA_HEAD]:
-              "bg-pink-500/10 text-pink-400 border-pink-500/20",
-            [ROLES.CONTENT_HEAD]:
-              "bg-violet-500/10 text-violet-400 border-violet-500/20",
-            [ROLES.CORE_MEMBER]:
-              "bg-teal-500/10 text-teal-400 border-teal-500/20",
-            [ROLES.MEMBER]:
-              "bg-slate-500/10 text-slate-400 border-slate-500/20",
-          };
-
           return (
             <div
               key={user.ID}
@@ -407,12 +369,7 @@ const ManageAccount = ({ users }) => {
                   <p className="text-sm text-gray-400">{user.Email}</p>
 
                   <div className="flex gap-2 flex-wrap items-center">
-                    <Badge
-                      className={`font-medium flex items-center gap-1 ${roleBadgeColors[user.Role] || "bg-slate-500/10 text-slate-400 border-slate-500/20"}`}
-                    >
-                      <RoleIcon className="w-3 h-3" />
-                      {ROLE_DISPLAY[user.Role] || "Member"}
-                    </Badge>
+                    <RoleBadge role={user.Role} />
                     {getStatusBadge(user.Status)}
                   </div>
                 </div>

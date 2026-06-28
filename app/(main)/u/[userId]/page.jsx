@@ -17,7 +17,8 @@ import { deleteArt, getAllArtistArt, getArtistProfile } from "@/service/art";
 import { toast } from "sonner";
 import { useAuthStore } from "@/store/user";
 import { changeUserRoleStatus } from "@/service/admin";
-import { canAssignRoles, getRoleDisplay } from "@/lib/roles";
+import { canAssignRoles } from "@/lib/roles";
+import { RoleBadge } from "@/components/RoleBadge";
 import ReactMarkdown from "react-markdown";
 import {
   DropdownMenu,
@@ -191,9 +192,7 @@ export default function ArtistProfile() {
 
             <div className="flex-1 pb-4">
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-accent font-semibold tracking-widest text-sm uppercase">
-                  {getRoleDisplay(artist?.Role)}
-                </span>
+                <RoleBadge role={artist?.Role} />
                 <div className="h-px w-8 bg-accent/50"></div>
               </div>
               <div className="flex items-center gap-3 group">
@@ -253,9 +252,7 @@ export default function ArtistProfile() {
                 <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">
                   Role
                 </p>
-                <p className="text-white font-medium">
-                  {getRoleDisplay(artist?.Role)}
-                </p>
+                <RoleBadge role={artist?.Role} />
               </div>
 
               <div>
