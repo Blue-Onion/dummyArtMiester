@@ -338,7 +338,7 @@ export default function ArtistProfile() {
 
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-12">
-          <div className="glass rounded-2xl p-10 border border-white/5">
+          <div className="glass rounded-2xl p-10 border  shadow-2xl">
             <h2 className="text-2xl font-bold mb-4">About</h2>
 
             <div className="text-gray-300 leading-relaxed markdown-content">

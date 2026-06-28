@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import ReactMarkdown from "react-markdown";
 
 const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
   const [preview, setPreview] = useState(null);
@@ -89,11 +90,13 @@ const onboarding = () => {
   const [bannerFile, setBannerFile] = useState(null);
   const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
+  const [bioTab, setBioTab] = useState("write");
 
   const {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(onBoardingSchema),
@@ -105,6 +108,8 @@ const onboarding = () => {
       youtube: "",
     },
   });
+
+  const descriptionValue = watch("description");
 
   useEffect(() => {
     if (user) {
@@ -189,6 +194,23 @@ const onboarding = () => {
         </div>
 
         <form className="space-y-8" onSubmit={handleSubmit(handleOnSubmit)}>
+          {/* Profile Images */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <ImageInput
+              label="Profile Picture"
+              inputRef={logoRef}
+              
+              existingImage={isEdit ? user?.Image?.String : ""}
+              onFileChange={setLogoFile}
+            />
+
+            <ImageInput
+              label="Banner Image"
+              inputRef={bannerRef}
+              existingImage={isEdit ? user?.BannerImage?.String : ""}
+              onFileChange={setBannerFile}
+            />
+          </div>
           {/* Username */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-white/80">
@@ -210,24 +232,6 @@ const onboarding = () => {
 
             {errors.username && (
               <p className="text-red-500 text-sm">{errors.username.message}</p>
-            )}
-          </div>
-
-          {/* Bio */}
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-white/80">Bio</label>
-
-            <textarea
-              rows={5}
-              {...register("description")}
-              placeholder="Tell the world about your art, style, or creative journey..."
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 resize-none focus:outline-none focus:border-accent transition-all"
-            />
-
-            {errors.description && (
-              <p className="text-red-500 text-sm">
-                {errors.description.message}
-              </p>
             )}
           </div>
 
@@ -278,23 +282,58 @@ const onboarding = () => {
             </div>
           </div>
 
-          {/* Profile Images */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <ImageInput
-              label="Profile Picture"
-              inputRef={logoRef}
-              existingImage={isEdit ? user?.Image?.String : ""}
-              onFileChange={setLogoFile}
-            />
+          {/* Bio */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-white/80">Bio</label>
 
-            <ImageInput
-              label="Banner Image"
-              inputRef={bannerRef}
-              existingImage={isEdit ? user?.BannerImage?.String : ""}
-              onFileChange={setBannerFile}
-            />
+            <div className="flex gap-1 p-1 bg-white/5 border border-white/10 rounded-t-xl">
+              <button
+                type="button"
+                onClick={() => setBioTab("preview")}
+                className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
+                  bioTab === "preview"
+                    ? "bg-white/10 text-white"
+                    : "text-white/50 hover:text-white/80"
+                }`}
+              >
+                Preview
+              </button>
+              <button
+                type="button"
+                onClick={() => setBioTab("write")}
+                className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
+                  bioTab === "write"
+                    ? "bg-white/10 text-white"
+                    : "text-white/50 hover:text-white/80"
+                }`}
+              >
+                Write
+              </button>
+            </div>
+
+            {bioTab === "write" ? (
+              <textarea
+                rows={14}
+                {...register("description")}
+                placeholder="Tell the world about your art, style, or creative journey...&#10;&#10;You can use **markdown** for formatting:&#10;- Lists&#10;- *Italic* and **bold**&#10;- [Links](url)&#10;- Headers&#10;- And more!"
+                className="w-full bg-white/5 border-x border-b border-white/10 rounded-b-xl px-4 py-3 resize-none focus:outline-none focus:border-accent transition-all"
+              />
+            ) : (
+              <div className="w-full min-h-[336px] bg-white/5 border-x border-b border-white/10 rounded-b-xl px-4 py-3 markdown-content">
+                {descriptionValue?.trim() ? (
+                  <ReactMarkdown>{descriptionValue}</ReactMarkdown>
+                ) : (
+                  <p className="text-white/40">Nothing to preview yet.</p>
+                )}
+              </div>
+            )}
+
+            {errors.description && (
+              <p className="text-red-500 text-sm">
+                {errors.description.message}
+              </p>
+            )}
           </div>
-
           {/* Submit */}
           <button
             type="submit"

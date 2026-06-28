@@ -34,7 +34,7 @@ export const onBoardingSchema = z.object({
     ),
   description: z
     .string()
-    .max(300, "Bio cannot exceed 300 characters")
+    .max(2000, "Bio cannot exceed 2000 characters")
     .optional(),
   batch: z.string().max(20, "Batch cannot exceed 20 characters").optional(),
   instagram: z
