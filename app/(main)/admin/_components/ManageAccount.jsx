@@ -459,7 +459,7 @@ const ManageAccount = ({ users }) => {
                       </>
                     )}
 
-                    {user.Status !== "pending" && canAssignRoles(currUser) && (
+                    {user.Status !== "pending" && user.Status !== "banned" && canAssignRoles(currUser) && (
                       <DropdownMenuItem
                         onClick={() => {
                           setRoleDialogUser(user);
@@ -472,26 +472,28 @@ const ManageAccount = ({ users }) => {
                       </DropdownMenuItem>
                     )}
 
-                    <DropdownMenuItem
-                      onClick={() => handleBanToggle(user.ID, user.Status)}
-                      className={`flex items-center gap-2 px-2.5 py-2 rounded-lg cursor-pointer ${
-                        user.Status === "banned"
-                          ? "hover:bg-emerald-500/10 hover:text-emerald-400"
-                          : "hover:bg-rose-950/40 hover:text-rose-400"
-                      }`}
-                    >
-                      {user.Status === "banned" ? (
-                        <>
-                          <RotateCcw className="w-4 h-4 text-emerald-400" />
-                          <span>Unban User</span>
-                        </>
-                      ) : (
-                        <>
-                          <Ban className="w-4 h-4 text-rose-400" />
-                          <span>Ban User</span>
-                        </>
-                      )}
-                    </DropdownMenuItem>
+                    {user.Role !== ROLES.PRESIDENT && (
+                      <DropdownMenuItem
+                        onClick={() => handleBanToggle(user.ID, user.Status)}
+                        className={`flex items-center gap-2 px-2.5 py-2 rounded-lg cursor-pointer ${
+                          user.Status === "banned"
+                            ? "hover:bg-emerald-500/10 hover:text-emerald-400"
+                            : "hover:bg-rose-950/40 hover:text-rose-400"
+                        }`}
+                      >
+                        {user.Status === "banned" ? (
+                          <>
+                            <RotateCcw className="w-4 h-4 text-emerald-400" />
+                            <span>Unban User</span>
+                          </>
+                        ) : (
+                          <>
+                            <Ban className="w-4 h-4 text-rose-400" />
+                            <span>Ban User</span>
+                          </>
+                        )}
+                      </DropdownMenuItem>
+                    )}
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
