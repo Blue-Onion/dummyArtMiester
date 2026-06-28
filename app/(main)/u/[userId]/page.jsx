@@ -18,6 +18,7 @@ import { toast } from "sonner";
 import { useAuthStore } from "@/store/user";
 import { changeUserRoleStatus } from "@/service/admin";
 import { canAssignRoles, getRoleDisplay } from "@/lib/roles";
+import ReactMarkdown from "react-markdown";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -340,11 +341,13 @@ export default function ArtistProfile() {
           <div className="glass rounded-2xl p-10 border border-white/5">
             <h2 className="text-2xl font-bold mb-4">About</h2>
 
-            <p className="text-gray-300 leading-relaxed">
-              {artist?.Description?.String?.trim()
-                ? artist.Description.String
-                : "This artist hasn't added a bio yet."}
-            </p>
+            <div className="text-gray-300 leading-relaxed markdown-content">
+              {artist?.Description?.String?.trim() ? (
+                <ReactMarkdown>{artist.Description.String}</ReactMarkdown>
+              ) : (
+                <p>This artist hasn't added a bio yet.</p>
+              )}
+            </div>
           </div>
 
           <div className="space-y-8">
