@@ -1,10 +1,16 @@
+import React from "react";
+import HistoryTimeline from "./HistoryTimeline";
+import { batches } from "@/lib/batchesData";
 
-const page = () => {
+export const metadata = {
+  title: "Batch History | Art Meisters",
+  description: "Walk through the chronological timeline of our artistic cohorts, explore their members and works.",
+};
+
+export default function HistoryPage() {
   return (
-    <div>
-        <p>History</p>
+    <div className="min-h-screen bg-black text-white">
+      <HistoryTimeline batches={batches} />
     </div>
-  )
+  );
 }
-
-export default page
