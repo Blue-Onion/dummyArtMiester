@@ -14,7 +14,7 @@ export const FeaturedEvent = () => {
             <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
 
             <div className="absolute bottom-0 left-0 p-8 w-full">
-                <span className="bg-accent text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider mb-4 inline-block">
+                <span className="bg-accent text-content text-xs font-bold px-3 py-1 rounded uppercase tracking-wider mb-4 inline-block">
                     {event.badge}
                 </span>
                 <h3 className="font-heading font-bold text-3xl mb-2">{event.title}</h3>
@@ -26,7 +26,7 @@ export const FeaturedEvent = () => {
                     <div className="flex items-center gap-2"><Clock size={16} className="text-accent" /> {event.time}</div>
                 </div>
 
-                <button className="bg-accent hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium flex items-center gap-2 transition-all">
+                <button className="bg-accent hover:bg-red-700 text-content px-6 py-2 rounded-full font-medium flex items-center gap-2 transition-all">
                     LEARN MORE <MoveRight size={16} />
                 </button>
             </div>

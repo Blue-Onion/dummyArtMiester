@@ -49,7 +49,7 @@ export default function EventPage() {
   );
 
   return (
-    <main className="min-h-screen bg-black  pb-20 selection:bg-red-500/30">
+    <main className="min-h-screen bg-frosty  pb-20 selection:bg-red-500/30">
       <section className="container mx-auto px-6 lg:px-12">
         {/* Header Section */}
         <div className="mb-24 space-y-6">
@@ -60,7 +60,7 @@ export default function EventPage() {
             </span>
           </div>
 
-          <h2 className="text-6xl md:text-[8vw] font-bold text-white leading-[0.9] tracking-tighter">
+          <h2 className="text-6xl md:text-[8vw] font-bold text-content leading-[0.9] tracking-tighter">
             EVENTS & <br />
             <span className="text-transparent bg-clip-text bg-linear-to-br from-red-400 via-red-600 to-red-900">
               SHOWCASES

@@ -19,7 +19,7 @@ const Batch = () => {
   // If the batch does not exist, render a clean fallback error layout
   if (!batch) {
     return (
-      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-frosty text-content flex flex-col items-center justify-center p-6 text-center">
         <h1 className="text-4xl font-bold mb-4 text-red-500 font-serif">
           Cohort Not Found
         </h1>
@@ -37,12 +37,12 @@ const Batch = () => {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-red-500 pb-24">
+    <main className="min-h-screen bg-frosty text-content selection:bg-red-500 pb-24">
       {/* Back Button Navigation */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <Link
           href="/history"
-          className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-content transition-colors"
         >
           <ArrowLeft size={16} /> Back to Timeline
         </Link>
@@ -74,7 +74,7 @@ const Batch = () => {
                     {batch.members.length} Active Members
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-serif text-white tracking-tight leading-none">
+                <h1 className="text-4xl md:text-6xl font-serif text-content tracking-tight leading-none">
                   {batch.name}
                 </h1>
                 <p className="text-red-500 font-sans font-medium uppercase tracking-widest text-xs md:text-sm">
@@ -93,7 +93,7 @@ const Batch = () => {
         <div className="lg:col-span-7 space-y-8">
           {/* About Cohort */}
           <div className="rounded-2xl p-6 sm:p-8 border border-white/10 bg-neutral-950/40 backdrop-blur-md">
-            <h2 className="text-2xl font-serif text-white mb-4">
+            <h2 className="text-2xl font-serif text-content mb-4">
               About This Cohort
             </h2>
             <p className="text-neutral-300 leading-relaxed font-sans text-base sm:text-lg">
@@ -103,7 +103,7 @@ const Batch = () => {
 
           {/* Highlights & Milestones */}
           <div className="rounded-2xl p-6 sm:p-8 border border-white/10 bg-neutral-950/40 backdrop-blur-md">
-            <h3 className="text-xl font-serif text-white mb-6 flex items-center gap-2">
+            <h3 className="text-xl font-serif text-content mb-6 flex items-center gap-2">
               <Award size={20} className="text-red-500" />
               Cohort Milestones & Legacy
             </h3>
@@ -125,7 +125,7 @@ const Batch = () => {
         {/* Right Column: Member Roster Grid */}
         <div className="lg:col-span-5 space-y-6">
           <div className="rounded-2xl p-6 border border-white/10 bg-neutral-950/40 backdrop-blur-md">
-            <h3 className="text-xl font-serif text-white mb-6 flex items-center gap-2">
+            <h3 className="text-xl font-serif text-content mb-6 flex items-center gap-2">
               <Users size={20} className="text-red-500" />
               Cohort Members
             </h3>
@@ -150,7 +150,7 @@ const Batch = () => {
 
                     {/* Member Details */}
                     <div className="space-y-1 min-w-0">
-                      <h4 className="text-sm sm:text-base font-sans font-bold text-white truncate">
+                      <h4 className="text-sm sm:text-base font-sans font-bold text-content truncate">
                         {member.name}
                       </h4>
                       <p className="text-xs text-neutral-400 flex items-center gap-1.5 truncate">

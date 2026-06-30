@@ -62,10 +62,10 @@ const ResetPasswordForm = () => {
   if (!token) {
     return (
       <div className="space-y-4 text-center">
-        <div className="flex-center col-center gap-3 p-4 bg-red-950/20 border border-red-800/30 rounded-2xl text-white/80">
+        <div className="flex-center col-center gap-3 p-4 bg-red-950/20 border border-red-800/30 rounded-2xl text-content/80">
           <AlertTriangle className="size-8 text-yellow" />
-          <h2 className="font-serif text-lg text-white">Invalid Reset Link</h2>
-          <p className="text-xs text-white/60">
+          <h2 className="font-serif text-lg text-content">Invalid Reset Link</h2>
+          <p className="text-xs text-content/60">
             The password reset link is invalid, incomplete, or has expired. Please request a new one.
           </p>
         </div>
@@ -83,21 +83,21 @@ const ResetPasswordForm = () => {
     <form className="space-y-4" onSubmit={handleSubmit(onsubmit)}>
       {/* Password */}
       <div className="animate-item space-y-1.5">
-        <label className="text-xs font-medium text-white/80 ml-1">New Password</label>
+        <label className="text-xs font-medium text-content/80 ml-1">New Password</label>
         <div className="relative group">
-          <Lock className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-white/40 group-focus-within:text-red-800 transition-colors" />
+          <Lock className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-content/40 group-focus-within:text-red-800 transition-colors" />
           <input
             type={showPassword ? "text" : "password"}
             placeholder="••••••••"
             {...register("password")}
-            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-11 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-white placeholder:text-white/20"
+            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-11 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-content placeholder:text-content/20"
             required
           />
           {errors?.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-content/40 hover:text-content transition-colors"
           >
             {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
           </button>
@@ -106,14 +106,14 @@ const ResetPasswordForm = () => {
 
       {/* Confirm Password */}
       <div className="animate-item space-y-1.5">
-        <label className="text-xs font-medium text-white/80 ml-1">Confirm Password</label>
+        <label className="text-xs font-medium text-content/80 ml-1">Confirm Password</label>
         <div className="relative group">
-          <Lock className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-white/40 group-focus-within:text-red-800 transition-colors" />
+          <Lock className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-content/40 group-focus-within:text-red-800 transition-colors" />
           <input
             type={showConfirmPassword ? "text" : "password"}
             placeholder="••••••••"
             {...register("confirmPassword")}
-            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-11 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-white placeholder:text-white/20"
+            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-11 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-content placeholder:text-content/20"
             required
           />
           {errors?.confirmPassword && (
@@ -122,7 +122,7 @@ const ResetPasswordForm = () => {
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-content/40 hover:text-content transition-colors"
           >
             {showConfirmPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
           </button>
@@ -133,7 +133,7 @@ const ResetPasswordForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="animate-item w-full bg-red-800 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-red-900/20 flex-center gap-2 group mt-2 overflow-hidden relative disabled:opacity-50"
+        className="animate-item w-full bg-red-800 hover:bg-red-700 text-content font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-red-900/20 flex-center gap-2 group mt-2 overflow-hidden relative disabled:opacity-50"
       >
         <span className="relative z-10 flex items-center gap-2 text-sm">
           Reset Password{" "}
@@ -156,14 +156,14 @@ const ResetPasswordPage = () => {
           <h1 className="animate-item text-3xl md:text-4xl font-serif text-gradient mb-2">
             Reset Password
           </h1>
-          <p className="animate-item text-white/60 text-base">
+          <p className="animate-item text-content/60 text-base">
             Choose a strong new password.
           </p>
         </div>
 
         <Suspense
           fallback={
-            <div className="text-center py-4 text-white/60 text-sm">
+            <div className="text-center py-4 text-content/60 text-sm">
               Loading reset interface...
             </div>
           }
@@ -174,7 +174,7 @@ const ResetPasswordPage = () => {
         <div className="animate-item mt-6 text-center border-t border-white/5 pt-4">
           <Link
             href="/sign-in"
-            className="text-white/40 text-sm hover:text-white transition-colors"
+            className="text-content/40 text-sm hover:text-content transition-colors"
           >
             Back to Sign In
           </Link>

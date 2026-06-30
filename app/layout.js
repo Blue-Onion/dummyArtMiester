@@ -8,12 +8,30 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-    className="dark"
       lang="en"
-
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
       >
-      <body className="min-h-full bg-black flex flex-col font-sans selection:bg-accent ">
+      <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              var theme = localStorage.getItem("theme");
+              var root = document.documentElement;
+              if (theme === "dark" || (!theme && true)) {
+                root.classList.add("dark");
+                root.style.setProperty("--color-frosty", "#000");
+                root.style.setProperty("--color-content", "#fff");
+              } else {
+                root.classList.remove("dark");
+                root.style.setProperty("--color-frosty", "#F0F6FA");
+                root.style.setProperty("--color-content", "#000");
+              }
+            })();
+          `
+        }} />
+      </head>
+      <body className="min-h-full bg-frosty flex flex-col font-sans selection:bg-accent ">
           <Toaster richColors/>
         <main>
         {children}

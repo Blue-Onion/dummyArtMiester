@@ -59,7 +59,7 @@ const SignInPage = () => {
           <h1 className="animate-item text-3xl md:text-4xl font-serif text-gradient mb-2">
             Welcome Back
           </h1>
-          <p className="animate-item text-white/60 text-base">
+          <p className="animate-item text-content/60 text-base">
             Continue your creative journey.
           </p>
         </div>
@@ -67,14 +67,14 @@ const SignInPage = () => {
         <form className="space-y-4" onSubmit={handleSubmit(onsubmit)}>
           {/* Email */}
           <div className="animate-item space-y-1.5">
-            <label className="text-xs font-medium text-white/80 ml-1">Email Address</label>
+            <label className="text-xs font-medium text-content/80 ml-1">Email Address</label>
             <div className="relative group">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-white/40 group-focus-within:text-red-800 transition-colors" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-content/40 group-focus-within:text-red-800 transition-colors" />
               <input
                 type="email"
                 placeholder="john@example.com"
  {...register("email")}
-                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-white placeholder:text-white/20"
+                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-content placeholder:text-content/20"
                 required
               />
               {errors?.email && <p className="text-red-500">{errors.email.message}</p>}
@@ -84,17 +84,17 @@ const SignInPage = () => {
           {/* Password */}
           <div className="animate-item space-y-1.5">
             <div className="flex justify-between items-center ml-1">
-              <label className="text-xs font-medium text-white/80">Password</label>
+              <label className="text-xs font-medium text-content/80">Password</label>
               <Link href="/forgot-password" size="sm" className="text-[10px] text-red-800 hover:underline">
                 Forgot?
               </Link>
             </div>
             <div className="relative group">
-              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-white/40 group-focus-within:text-red-800 transition-colors" />
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-content/40 group-focus-within:text-red-800 transition-colors" />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
-                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-11 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-white placeholder:text-white/20"
+                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-11 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-content placeholder:text-content/20"
                 required
                  {...register("password")}
               />
@@ -102,7 +102,7 @@ const SignInPage = () => {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-content/40 hover:text-content transition-colors"
               >
                 {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
               </button>
@@ -112,7 +112,7 @@ const SignInPage = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="animate-item w-full bg-red-800 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-red-900/20 flex-center gap-2 group mt-2 overflow-hidden relative"
+            className="animate-item w-full bg-red-800 hover:bg-red-700 text-content font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-red-900/20 flex-center gap-2 group mt-2 overflow-hidden relative"
           >
             <span className="relative z-10 flex items-center gap-2 text-sm">
               Sign In <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
@@ -123,7 +123,7 @@ const SignInPage = () => {
           {/* Divider */}
           <div className="animate-item flex items-center gap-4 my-2">
             <div className="h-px flex-1 bg-white/10" />
-            <span className="text-[10px] text-white/30 font-medium uppercase tracking-wider">or continue with</span>
+            <span className="text-[10px] text-content/30 font-medium uppercase tracking-wider">or continue with</span>
             <div className="h-px flex-1 bg-white/10" />
           </div>
 
@@ -131,7 +131,7 @@ const SignInPage = () => {
         </form>
 
         <div className="animate-item mt-6 text-center">
-          <p className="text-white/40 text-sm">
+          <p className="text-content/40 text-sm">
             Don't have an account?{" "}
             <Link href="/sign-up" className="text-red-800 font-semibold hover:underline">
               Sign Up

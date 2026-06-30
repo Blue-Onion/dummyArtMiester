@@ -5,7 +5,7 @@ export function EventListItem({ id, date, month, title, desc, active }) {
     return (
         <Link href={`/event/${id}`} className={`glass rounded-2xl p-6 flex items-center gap-6 cursor-pointer transition-all duration-300 ${active ? 'border-accent/30 shadow-[0_0_20px_rgba(229,9,20,0.1)]' : 'hover:border-white/20 hover:bg-white/5'}`}>
             <div className="text-center  min-w-[60px]">
-                <div className={`font-heading font-bold text-3xl leading-none ${active ? 'text-accent' : 'text-white'}`}>{date}</div>
+                <div className={`font-heading font-bold text-3xl leading-none ${active ? 'text-accent' : 'text-content'}`}>{date}</div>
                 <div className="text-xs font-bold tracking-widest text-gray-500 mt-1">{month}</div>
             </div>
             <div className="w-px h-12 bg-white/10"></div>

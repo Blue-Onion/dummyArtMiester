@@ -52,7 +52,7 @@ if(!artWorks){
     <div className="space-y-8 w-full max-w-5xl mx-auto animate-fade-in">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h2 className="text-3xl font-serif text-white mb-2 tracking-wide">
+          <h2 className="text-3xl font-serif text-content mb-2 tracking-wide">
             Pending Artworks
           </h2>
           <p className="text-gray-400 text-sm">
@@ -71,14 +71,14 @@ if(!artWorks){
             className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden flex flex-col hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.02)]"
           >
             {/* Image Section */}
-            <div className="h-56 w-full relative overflow-hidden bg-black/40">
+            <div className="h-56 w-full relative overflow-hidden bg-frosty/40">
               <img
                 src={artItem.Image || "/placeholder.png"}
                 alt={artItem.Name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute top-3 right-3">
-                <Badge className="bg-black/60 backdrop-blur-md text-white border-white/15 capitalize font-medium text-xs">
+                <Badge className="bg-frosty/60 backdrop-blur-md text-content border-white/15 capitalize font-medium text-xs">
                   {artItem.Status}
                 </Badge>
               </div>
@@ -88,14 +88,14 @@ if(!artWorks){
             <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
               <div className="space-y-3">
                 <div className="flex justify-between items-start gap-2">
-                  <h3 className="text-xl text-white font-medium tracking-wide truncate flex-1">
+                  <h3 className="text-xl text-content font-medium tracking-wide truncate flex-1">
                     {artItem.Name}
                   </h3>
                   <a
                     href={artItem.Image}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white p-1 rounded-md hover:bg-white/5 transition-colors"
+                    className="text-gray-400 hover:text-content p-1 rounded-md hover:bg-white/5 transition-colors"
                     title="Open full size image"
                   >
                     <ExternalLink className="w-4 h-4" />
@@ -148,7 +148,7 @@ if(!artWorks){
 
                   <Button
                     onClick={() => handleArtChange(artItem.ID, "approved")}
-                    className="flex-1 bg-red-600 text-white hover:bg-red-500 rounded-xl h-9 text-xs py-0 gap-1.5 font-medium border-0"
+                    className="flex-1 bg-red-600 text-content hover:bg-red-500 rounded-xl h-9 text-xs py-0 gap-1.5 font-medium border-0"
                   >
                     <Check className="w-4 h-4" />
                     Approve

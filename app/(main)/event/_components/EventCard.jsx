@@ -95,11 +95,11 @@ export const EventCard = ({ event, isAdmin }) => {
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent" />
 
         {/* Date Badge */}
-        <div className="absolute top-6 left-6 flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/10 shadow-xl">
-          <span className="text-white font-bold text-2xl leading-none">
+        <div className="absolute top-6 left-6 flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-frosty/60 backdrop-blur-xl border border-white/10 shadow-xl">
+          <span className="text-content font-bold text-2xl leading-none">
             {new Date(event?.EventDate).getDate()}
           </span>
-          <span className="text-white/60 font-semibold tracking-widest text-[11px] uppercase mt-1">
+          <span className="text-content/60 font-semibold tracking-widest text-[11px] uppercase mt-1">
             {new Date(event?.EventDate).toLocaleString("default", {
               month: "short",
             })}
@@ -112,7 +112,7 @@ export const EventCard = ({ event, isAdmin }) => {
               <DropdownMenuTrigger asChild>
                 <button
                   onClick={(e) => e.stopPropagation()}
-                  className="p-2 rounded-xl bg-black/50 backdrop-blur-xl border border-white/10 text-white hover:bg-white/10 transition-all"
+                  className="p-2 rounded-xl bg-frosty/50 backdrop-blur-xl border border-white/10 text-content hover:bg-white/10 transition-all"
                 >
                   <MoreVertical size={18} />
                 </button>
@@ -120,7 +120,7 @@ export const EventCard = ({ event, isAdmin }) => {
 
               <DropdownMenuContent
                 align="end"
-                className="w-44 bg-black/90 border border-white/10 text-white"
+                className="w-44 bg-frosty/90 border border-white/10 text-content"
               >
                 <DropdownMenuItem
                   onClick={(e) => {
@@ -172,7 +172,7 @@ export const EventCard = ({ event, isAdmin }) => {
 
       {/* Content Section */}
       <div className="p-8 flex flex-col grow space-y-4">
-        <h3 className="text-3xl font-bold text-white group-hover:text-red-400 transition-colors duration-300 leading-tight">
+        <h3 className="text-3xl font-bold text-content group-hover:text-red-400 transition-colors duration-300 leading-tight">
           {event?.Name}
         </h3>
 

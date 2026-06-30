@@ -141,7 +141,7 @@ export default function EventDetail() {
     (!getEventLoading && !event)
   ) {
     return (
-      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 text-center selection:bg-red-500">
+      <div className="min-h-screen bg-frosty text-content flex flex-col items-center justify-center p-6 text-center selection:bg-red-500">
         <h1 className="text-4xl font-bold mb-4 text-red-500">
           Event Not Found
         </h1>
@@ -215,7 +215,7 @@ export default function EventDetail() {
     "/default.jpeg";
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-red-500 pb-20">
+    <main className="min-h-screen bg-frosty text-content selection:bg-red-500 pb-20">
       <section className="w-full ">
         <div className="relative w-full h-[300px] md:h-[480px] overflow-hidden border-y border-white/10">
           <img
@@ -229,7 +229,7 @@ export default function EventDetail() {
           <div className="absolute inset-0 flex items-end">
             <div className="max-w-6xl mx-auto w-full px-6 md:px-12 pb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <div className="flex items-center gap-5">
-                <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl overflow-hidden bg-black/60 backdrop-blur-md border border-white/10 shadow-xl flex items-center justify-center">
+                <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl overflow-hidden bg-frosty/60 backdrop-blur-md border border-white/10 shadow-xl flex items-center justify-center">
                   <img
                     src={logoSrc}
                     alt="Event Logo"
@@ -263,11 +263,11 @@ export default function EventDetail() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-xl bg-black/70 backdrop-blur-md border border-white/10">
-                  <span className="text-white font-bold text-2xl md:text-3xl leading-none">
+                <div className="flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-xl bg-frosty/70 backdrop-blur-md border border-white/10">
+                  <span className="text-content font-bold text-2xl md:text-3xl leading-none">
                     {day}
                   </span>
-                  <span className="text-white/60 font-semibold tracking-widest text-xs uppercase mt-1">
+                  <span className="text-content/60 font-semibold tracking-widest text-xs uppercase mt-1">
                     {month}
                   </span>
                 </div>
@@ -280,13 +280,13 @@ export default function EventDetail() {
                       {isModerator && (
                         <>
                           <Link href={`/admin/events/create?id=${eventId}`}>
-                            <button className="px-6 py-3 rounded-xl bg-zinc-700 text-white font-bold text-sm md:text-base hover:bg-zinc-600 transition shadow-lg">
+                            <button className="px-6 py-3 rounded-xl bg-zinc-700 text-content font-bold text-sm md:text-base hover:bg-zinc-600 transition shadow-lg">
                               Edit Event
                             </button>
                           </Link>
                           <Link href={`/event/${eventId}/member`}>
                             <button
-                              className="px-6 py-3 rounded-xl bg-red-500 text-white font-bold text-sm md:text-base hover:bg-red-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                              className="px-6 py-3 rounded-xl bg-red-500 text-content font-bold text-sm md:text-base hover:bg-red-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                               Check Attendees
                             </button>
@@ -299,7 +299,7 @@ export default function EventDetail() {
                         onClick={handleEventClick}
                         disabled={disabled}
                         title={title}
-                        className="px-6 py-3 rounded-xl bg-red-500 text-white font-bold text-sm md:text-base hover:bg-red-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-6 py-3 rounded-xl bg-red-500 text-content font-bold text-sm md:text-base hover:bg-red-600 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {label}
                       </button>
@@ -328,7 +328,7 @@ export default function EventDetail() {
                             <AlertDialogCancel>Cancel</AlertDialogCancel>
                             <AlertDialogAction
                               className={
-                                "bg-red-500 text-white hover:bg-red-600"
+                                "bg-red-500 text-content hover:bg-red-600"
                               }
                               onClick={() => handleDeleteEvent()}
                             >
@@ -358,7 +358,7 @@ export default function EventDetail() {
               <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">
                 Date
               </p>
-              <p className="text-white font-medium flex items-center gap-2">
+              <p className="text-content font-medium flex items-center gap-2">
                 <Calendar size={14} className="text-red-400" />
                 {fullDate || `${day} ${month}`}{" "}
                 {isFeatured ? ` · ${featured.date}` : ""}
@@ -370,7 +370,7 @@ export default function EventDetail() {
                 <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">
                   Location
                 </p>
-                <p className="text-white font-medium flex items-center gap-2">
+                <p className="text-content font-medium flex items-center gap-2">
                   <MapPin size={14} className="text-red-400" />
                   {featured.location}
                 </p>
@@ -382,7 +382,7 @@ export default function EventDetail() {
                 <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">
                   Time
                 </p>
-                <p className="text-white font-medium flex items-center gap-2">
+                <p className="text-content font-medium flex items-center gap-2">
                   <Clock size={14} className="text-red-400" />
                   {featured.time}
                 </p>
@@ -393,7 +393,7 @@ export default function EventDetail() {
               <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">
                 Organized by
               </p>
-              <p className="text-white font-medium">{data.siteName}</p>
+              <p className="text-content font-medium">{data.siteName}</p>
             </div>
           </div>
         </div>

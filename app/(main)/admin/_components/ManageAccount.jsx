@@ -149,7 +149,7 @@ const ManageAccount = ({ users }) => {
   return (
     <div className="w-full max-w-6xl mx-auto space-y-8 animate-fade-in">
       <div>
-        <h2 className="text-3xl font-serif text-white mb-2 tracking-wide">
+        <h2 className="text-3xl font-serif text-content mb-2 tracking-wide">
           Manage Users
         </h2>
         <p className="text-gray-400 text-sm">
@@ -166,7 +166,7 @@ const ManageAccount = ({ users }) => {
         >
           <Users className="w-3.5 h-3.5 text-red-500" />
           <span>Total Users:</span>
-          <span className="font-semibold text-white">{totalUsers}</span>
+          <span className="font-semibold text-content">{totalUsers}</span>
         </Badge>
 
         <Badge
@@ -175,7 +175,7 @@ const ManageAccount = ({ users }) => {
         >
           <AlertCircle className="w-3.5 h-3.5 text-red-500" />
           <span>Pending:</span>
-          <span className="font-semibold text-white">{pendingUsers}</span>
+          <span className="font-semibold text-content">{pendingUsers}</span>
         </Badge>
 
         <Badge
@@ -184,7 +184,7 @@ const ManageAccount = ({ users }) => {
         >
           <Ban className="w-3.5 h-3.5 text-red-500" />
           <span>Banned:</span>
-          <span className="font-semibold text-white">{bannedUsers}</span>
+          <span className="font-semibold text-content">{bannedUsers}</span>
         </Badge>
       </div>
 
@@ -197,7 +197,7 @@ const ManageAccount = ({ users }) => {
             placeholder="Search users by name or email..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 transition-all"
+            className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 transition-all"
           />
         </div>
 
@@ -209,7 +209,7 @@ const ManageAccount = ({ users }) => {
             <select
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
-              className="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-red-500/50"
+              className="bg-frosty/40 border border-white/10 rounded-xl px-3 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50"
             >
               <option value="all">All Roles</option>
               {ROLE_ORDER.map((role) => (
@@ -227,7 +227,7 @@ const ManageAccount = ({ users }) => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-red-500/50"
+              className="bg-frosty/40 border border-white/10 rounded-xl px-3 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50"
             >
               <option value="all">All</option>
               <option value="pending">Pending</option>
@@ -267,7 +267,7 @@ const ManageAccount = ({ users }) => {
                   onClick={() => setSelectedRole(role)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all text-left ${
                     selectedRole === role
-                      ? "border-red-500 bg-red-500/10 text-white"
+                      ? "border-red-500 bg-red-500/10 text-content"
                       : "border-white/10 bg-white/5 text-gray-300 hover:border-white/20 hover:bg-white/10"
                   }`}
                 >
@@ -361,7 +361,7 @@ const ManageAccount = ({ users }) => {
 
                 <div className="space-y-1.5">
                   <Link href={`/u/${user.ID}`}>
-                    <h3 className="text-lg font-semibold hover:underline text-white tracking-wide">
+                    <h3 className="text-lg font-semibold hover:underline text-content tracking-wide">
                       {user.Name}
                     </h3>
                   </Link>
@@ -381,14 +381,14 @@ const ManageAccount = ({ users }) => {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="text-gray-400 hover:text-white hover:bg-white/10 rounded-full h-9 w-9"
+                      className="text-gray-400 hover:text-content hover:bg-white/10 rounded-full h-9 w-9"
                     >
                       <MoreVertical className="w-5 h-5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                     align="end"
-                    className="bg-[#181818] border border-white/10 text-white rounded-xl shadow-2xl p-1.5 min-w-44"
+                    className="bg-[#181818] border border-white/10 text-content rounded-xl shadow-2xl p-1.5 min-w-44"
                   >
                     <DropdownMenuLabel className="text-gray-400 text-xs px-2.5 py-1.5">
                       Actions

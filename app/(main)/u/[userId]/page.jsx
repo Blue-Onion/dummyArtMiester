@@ -145,7 +145,7 @@ export default function ArtistProfile() {
   }
   if (!artist) {
     return (
-      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6">
+      <div className="min-h-screen bg-frosty text-content flex flex-col items-center justify-center p-6">
         <h1 className="text-4xl font-bold mb-4">Artist Not Found</h1>
         <p className="text-gray-400 mb-8">
           The creator you're looking for doesn't exist in our community yet.
@@ -160,7 +160,7 @@ export default function ArtistProfile() {
     );
   }
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-accent pb-20">
+    <main className="min-h-screen bg-frosty text-content selection:bg-accent pb-20">
       <section className="relative h-[40vh] w-full rounded-2xl overflow-hidden">
         <img
           src={
@@ -196,7 +196,7 @@ export default function ArtistProfile() {
                 <div className="h-px w-8 bg-accent/50"></div>
               </div>
               <div className="flex items-center gap-3 group">
-                <h2 className="font-heading font-bold text-white text-5xl md:text-7xl leading-none tracking-tight">
+                <h2 className="font-heading font-bold text-content text-5xl md:text-7xl leading-none tracking-tight">
                   {artist?.Username?.Valid
                     ? `@${artist.Username.String}`
                     : "Username not set"}
@@ -206,7 +206,7 @@ export default function ArtistProfile() {
                     href="/onboarding"
                     className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 p-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-md"
                   >
-                    <Pencil size={18} className="text-white/80" />
+                    <Pencil size={18} className="text-content/80" />
                   </Link>
                 )}
                 {canAssignRoles(user) && !canAssignRoles({ Role: artist?.Role }) && (
@@ -259,7 +259,7 @@ export default function ArtistProfile() {
                 <p className="text-gray-500 text-xs uppercase tracking-widest mb-1">
                   Batch
                 </p>
-                <p className="text-white font-medium">
+                <p className="text-content font-medium">
                   {artist?.Batch?.Valid && artist?.Batch?.String
                     ? artist.Batch.String
                     : "Not specified"}
@@ -361,7 +361,7 @@ export default function ArtistProfile() {
                     <div className="absolute top-3 right-3 z-20">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <button className="text-white bg-black/50 hover:bg-black/70 p-2 rounded-md">
+                          <button className="text-content bg-frosty/50 hover:bg-frosty/70 p-2 rounded-md">
                             <MoreVertical size={16} />
                           </button>
                         </DropdownMenuTrigger>
@@ -386,7 +386,7 @@ export default function ArtistProfile() {
                   />
 
                   <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
-                    <h4 className="text-xl font-bold text-white mb-1">
+                    <h4 className="text-xl font-bold text-content mb-1">
                       {art.Name}
                     </h4>
 
@@ -418,7 +418,7 @@ export default function ArtistProfile() {
                   <div className="flex items-center justify-center">
                     <Link
                       href={"/art/create"}
-                      className="flex items-center gap-2 justify-center rounded-full h-12 w-30 border bg-white font-semibold text-black text-center"
+                      className="flex items-center gap-2 justify-center rounded-full h-12 w-30 border bg-white font-semibold text-content text-center"
                     >
                       <Upload size={24} />
                       Upload

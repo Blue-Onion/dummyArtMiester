@@ -347,12 +347,12 @@ const Page = () => {
 
   return (
     <section>
-      <div className="min-h-screen bg-black text-white px-6 py-10">
+      <div className="min-h-screen bg-frosty text-content px-6 py-10">
         <div className="mb-10 text-center">
           <h2 className="text-5xl font-bold tracking-tight">
             Art <span className="text-red-700 mx-2">Exhibition</span>
           </h2>
-          <p className="text-white/60 mt-2">
+          <p className="text-content/60 mt-2">
             Discover creativity in every frame.
           </p>
         </div>
@@ -369,10 +369,10 @@ const Page = () => {
                   alt={art.Name}
                   className="w-full object-cover rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex flex-col justify-end p-4">
-                  <p className="font-semibold text-white">{art.Name}</p>
+                <div className="absolute inset-0 bg-frosty/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex flex-col justify-end p-4">
+                  <p className="font-semibold text-content">{art.Name}</p>
                   {art.Description?.Valid && (
-                    <p className="text-sm text-white/70">
+                    <p className="text-sm text-content/70">
                       {art.Description.String}
                     </p>
                   )}
@@ -394,7 +394,7 @@ const Page = () => {
         {hasMore && (
           <div
             ref={loaderRef}
-            className="flex justify-center py-10 text-white/60"
+            className="flex justify-center py-10 text-content/60"
           >
             Loading more art...
           </div>

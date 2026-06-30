@@ -6,7 +6,7 @@ export function CategoryItem({ icon, title, subtitle, active }) {
         {icon}
       </div>
       <div>
-        <h4 className={`font-heading font-bold text-lg leading-tight ${active ? 'text-white' : 'text-gray-300 group-hover:text-white transition-colors'}`}>{title}</h4>
+        <h4 className={`font-heading font-bold text-lg leading-tight ${active ? 'text-content' : 'text-gray-300 group-hover:text-content transition-colors'}`}>{title}</h4>
         <p className="text-xs text-gray-400">{subtitle}</p>
       </div>
     </div>

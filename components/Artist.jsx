@@ -5,7 +5,7 @@ import { ArtistCard } from "./ArtistCard";
 
 import { useEffect } from "react";
 import useFetch from "@/hooks/useFetch";
-import { getAllApprovedUser } from "@/service/user";
+import { getAllCoreMemberUser } from "@/service/user";
 import { ArtistsSectionSkeleton } from "./skeletons";
 export const Artist = () => {
   const [artists, setArtist] = useState(null);
@@ -13,7 +13,7 @@ export const Artist = () => {
     data: artistsRes,
     loading,
     fn: getArtists,
-  } = useFetch(getAllApprovedUser);
+  } = useFetch(getAllCoreMemberUser);
   useEffect(() => {
     getArtists();
   }, []);

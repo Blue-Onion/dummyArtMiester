@@ -21,7 +21,7 @@ const MyEvent = () => {
   }, [data, loading]);
 
   return (
-    <section className="min-h-screen bg-black pb-20 selection:bg-red-500/30">
+    <section className="min-h-screen bg-frosty pb-20 selection:bg-red-500/30">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-24 space-y-6">
@@ -32,7 +32,7 @@ const MyEvent = () => {
             </span>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <h2 className="text-3xl flex flex-wrap justify-center items-center gap-4 md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+            <h2 className="text-3xl flex flex-wrap justify-center items-center gap-4 md:text-5xl lg:text-6xl font-bold text-content leading-tight tracking-tight">
               My
               <span className="text-transparent bg-clip-text bg-linear-to-br from-red-400 via-red-600 to-red-900">
                 EVENTS

@@ -57,7 +57,7 @@ export default function Page() {
   return (
     <section
       id="adminPage"
-      className="min-h-screen py-16 px-4 md:px-8 bg-black"
+      className="min-h-screen py-16 px-4 md:px-8 bg-frosty"
     >
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-4 mb-10">
@@ -82,7 +82,7 @@ export default function Page() {
               {canAssignRoles(user) && (
                 <TabsTrigger
                   value="manage-account"
-                  className="rounded-xl w-full text-white text-sm py-3 px-4 flex items-center justify-center md:justify-start gap-2.5 transition-all data-[state=active]:bg-red-600 data-[state=active]:text-white hover:bg-white/5 cursor-pointer font-medium"
+                  className="rounded-xl w-full text-content text-sm py-3 px-4 flex items-center justify-center md:justify-start gap-2.5 transition-all data-[state=active]:bg-red-600 data-[state=active]:text-content hover:bg-white/5 cursor-pointer font-medium"
                 >
                   <Users className="w-4 h-4" />
                   <span>Accounts</span>
@@ -91,7 +91,7 @@ export default function Page() {
               {canModerate(user) && (
                 <TabsTrigger
                   value="approve-art"
-                  className="rounded-xl w-full text-white text-sm py-3 px-4 flex items-center justify-center md:justify-start gap-2.5 transition-all data-[state=active]:bg-red-600 data-[state=active]:text-white hover:bg-white/5 cursor-pointer font-medium"
+                  className="rounded-xl w-full text-content text-sm py-3 px-4 flex items-center justify-center md:justify-start gap-2.5 transition-all data-[state=active]:bg-red-600 data-[state=active]:text-content hover:bg-white/5 cursor-pointer font-medium"
                 >
                   <Palette className="w-4 h-4" />
                   <span>Artworks</span>

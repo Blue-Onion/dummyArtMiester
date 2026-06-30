@@ -9,6 +9,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  --color-frosty: #F0F6FA;
+  --color-content: #000;
   --color-yellow: #e7d393;
   --color-white-100: #efefef;
   --font-sans: "Mona Sans", sans-serif;
@@ -40,8 +42,8 @@ body {
 html,
 body {
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: var(--color-frosty);
+  color: var(--color-content);
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -59,7 +61,7 @@ body {
 }
 
 @utility text-gradient {
-  background: linear-gradient(to bottom, #ffffff, #898989);
+  background: linear-gradient(to bottom, #000000, #555555);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -68,8 +70,8 @@ body {
 @utility radial-gradient {
   background: radial-gradient(
     circle at center,
-    #434343 0%,
-    #000 50%,
+    #e8ecf0 0%,
+    #F0F6FA 50%,
     transparent 100%
   );
 }
@@ -148,7 +150,7 @@ body {
   }
 
   .badge {
-    @apply inline-block rounded-full bg-white text-black px-4 py-2 text-sm font-medium mb-8;
+    @apply inline-block rounded-full bg-white text-content px-4 py-2 text-sm font-medium mb-8;
   }
 
   .top-grid {
@@ -193,14 +195,14 @@ body {
 
   .masked-container {
     h2 {
-      @apply text-4xl md:text-5xl text-center mb-10 text-white mt-32;
+      @apply text-4xl md:text-5xl text-center mb-10 text-content mt-32;
     }
 
     div {
       @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-52 left-1/2 -translate-x-1/2;
 
       h3 {
-        @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-white;
+        @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-content;
       }
 
       p {
@@ -254,6 +256,8 @@ body {
 }
 
 :root {
+  --color-frosty: #F0F6FA;
+  --color-content: #000;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -289,6 +293,8 @@ body {
 }
 
 .dark {
+  --color-frosty: #000;
+  --color-content: #fff;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -326,28 +332,28 @@ body {
 .markdown-content h2,
 .markdown-content h3,
 .markdown-content h4 {
-  @apply text-white font-bold mt-6 mb-3;
+  @apply text-content font-bold mt-6 mb-3;
 }
 .markdown-content h1 { @apply text-2xl; }
 .markdown-content h2 { @apply text-xl; }
 .markdown-content h3 { @apply text-lg; }
-.markdown-content p { @apply mb-4 text-gray-300; }
+.markdown-content p { @apply mb-4 text-gray-600 dark:text-gray-300; }
 .markdown-content ul,
 .markdown-content ol { @apply mb-4 pl-6; }
 .markdown-content ul { @apply list-disc; }
 .markdown-content ol { @apply list-decimal; }
 .markdown-content li { @apply mb-1; }
 .markdown-content a { @apply text-accent underline hover:opacity-80; }
-.markdown-content strong { @apply text-white font-semibold; }
+.markdown-content strong { @apply text-content font-semibold; }
 .markdown-content em { @apply italic; }
 .markdown-content blockquote {
-  @apply border-l-4 border-gray-600 pl-4 italic text-gray-400 mb-4;
+  @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-500 dark:text-gray-400 mb-4;
 }
 .markdown-content code {
-  @apply bg-white/10 px-1.5 py-0.5 rounded text-sm text-gray-200;
+  @apply bg-black/5 dark:bg-white/10 px-1.5 py-0.5 rounded text-sm text-gray-700 dark:text-gray-300;
 }
 .markdown-content pre {
-  @apply bg-white/5 border border-white/10 rounded-xl p-4 mb-4 overflow-x-auto;
+  @apply bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-4 mb-4 overflow-x-auto;
 }
 .markdown-content pre code {
   @apply bg-transparent p-0;

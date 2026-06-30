@@ -117,7 +117,7 @@ export default function ArtPage() {
 
   if (!art) {
     return (
-      <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
+      <main className="min-h-screen bg-frosty text-content flex items-center justify-center px-6">
         <div className="text-center max-w-md">
           <h1 className="text-4xl font-bold mb-3">Artwork Not Found</h1>
           <p className="text-gray-400 mb-6">
@@ -125,7 +125,7 @@ export default function ArtPage() {
           </p>
           <Link
             href="/"
-            className="inline-flex px-5 py-3 bg-red-900 rounded-xl  text-white font-semibold hover:opacity-90 transition"
+            className="inline-flex px-5 py-3 bg-red-900 rounded-xl  text-content font-semibold hover:opacity-90 transition"
           >
             Go Back Home
           </Link>
@@ -135,7 +135,7 @@ export default function ArtPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-accent pb-20 pt-8 px-6 md:px-12">
+    <main className="min-h-screen bg-frosty text-content selection:bg-accent pb-20 pt-8 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <Link
           href={`/u/${art?.data?.UserID}`}
@@ -150,12 +150,12 @@ export default function ArtPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* LEFT SIDE - Artwork */}
-          <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-white/5 group min-h-[500px] flex items-center justify-center bg-black/40">
+          <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-white/5 group min-h-[500px] flex items-center justify-center bg-frosty/40">
             {/* Action Buttons */}
     
 
             {/* Artwork Image */}
-            <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-white/5 group min-h-[500px] bg-black/40">
+            <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-white/5 group min-h-[500px] bg-frosty/40">
               {/* Action Buttons */}
               <div className="absolute top-6 right-6 z-20 flex gap-3">
                 {/* Artist Actions */}
@@ -164,11 +164,11 @@ export default function ArtPage() {
                     {/* Edit */}
                     <Link
                       href={`/art/create?id=${artId}`}
-                      className="w-12 h-12 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all"
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-frosty/50 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all"
                     >
                       <Pencil
                         size={18}
-                        className="text-white group-hover:scale-110 transition-transform"
+                        className="text-content group-hover:scale-110 transition-transform"
                       />
                     </Link>
 
@@ -198,7 +198,7 @@ export default function ArtPage() {
                           <AlertDialogCancel>Cancel</AlertDialogCancel>
                           <AlertDialogAction
                             onClick={handleDelete}
-                            className="bg-red-500 text-white hover:bg-red-600"
+                            className="bg-red-500 text-content hover:bg-red-600"
                           >
                             Continue
                           </AlertDialogAction>
@@ -265,7 +265,7 @@ export default function ArtPage() {
                 {art?.data?.Name}
               </h1>
 
-              <h3 className="text-lg font-semibold text-white/80 mb-3 uppercase tracking-wide">
+              <h3 className="text-lg font-semibold text-content/80 mb-3 uppercase tracking-wide">
                 About the Artwork
               </h3>
 
@@ -278,7 +278,7 @@ export default function ArtPage() {
             {/* Artist Profile */}
             <div className="glass rounded-3xl p-8 border border-white/5 flex flex-col justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-white/80 mb-5 uppercase tracking-wide">
+                <h3 className="text-lg font-semibold text-content/80 mb-5 uppercase tracking-wide">
                   Artist Profile
                 </h3>
 

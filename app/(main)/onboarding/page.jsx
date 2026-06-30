@@ -47,7 +47,7 @@ const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
 
   return (
     <div className="space-y-2">
-      <label className="text-sm font-medium text-white/80">{label}</label>
+      <label className="text-sm font-medium text-content/80">{label}</label>
 
       <input
         type="file"
@@ -76,7 +76,7 @@ const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
           onClick={() => inputRef.current?.click()}
           className="w-full bg-white/5 border border-white/10 border-dashed rounded-xl px-4 py-6 text-center cursor-pointer"
         >
-          <p className="text-white/40 text-sm">Click to upload image</p>
+          <p className="text-content/40 text-sm">Click to upload image</p>
         </div>
       )}
     </div>
@@ -178,7 +178,7 @@ const onboarding = () => {
   const logoRef = useRef(null);
   const bannerRef = useRef(null);
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-6 py-16">
+    <div className="min-h-screen bg-frosty text-content flex items-center justify-center px-6 py-16">
       <section className="w-full max-w-3xl glass rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl">
         {/* Header */}
         <div className="text-center mb-10">
@@ -186,7 +186,7 @@ const onboarding = () => {
             {isEdit ? "Edit Your Profile" : "Complete Your Profile"}
           </h2>
 
-          <p className="text-white/60 text-lg">
+          <p className="text-content/60 text-lg">
             {isEdit
               ? "Update your identity and keep your creative journey fresh."
               : "Set up your identity and let the community know who you are."}
@@ -213,12 +213,12 @@ const onboarding = () => {
           </div>
           {/* Username */}
           <div className="space-y-2">
-            <label className="text-sm font-medium text-white/80">
+            <label className="text-sm font-medium text-content/80">
               Username
             </label>
 
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-content/40">
                 @
               </span>
 
@@ -237,7 +237,7 @@ const onboarding = () => {
 
           {/* Batch */}
           <div className="space-y-2">
-            <label className="text-sm font-medium text-white/80">
+            <label className="text-sm font-medium text-content/80">
               Batch / Year
             </label>
 
@@ -256,7 +256,7 @@ const onboarding = () => {
           {/* Social Links */}
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">
+              <label className="text-sm font-medium text-content/80">
                 Instagram
               </label>
 
@@ -269,7 +269,7 @@ const onboarding = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">
+              <label className="text-sm font-medium text-content/80">
                 YouTube
               </label>
 
@@ -284,7 +284,7 @@ const onboarding = () => {
 
           {/* Bio */}
           <div className="space-y-2">
-            <label className="text-sm font-medium text-white/80">Bio</label>
+            <label className="text-sm font-medium text-content/80">Bio</label>
 
             <div className="flex gap-1 p-1 bg-white/5 border border-white/10 rounded-t-xl">
               <button
@@ -292,8 +292,8 @@ const onboarding = () => {
                 onClick={() => setBioTab("preview")}
                 className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                   bioTab === "preview"
-                    ? "bg-white/10 text-white"
-                    : "text-white/50 hover:text-white/80"
+                    ? "bg-white/10 text-content"
+                    : "text-content/50 hover:text-content/80"
                 }`}
               >
                 Preview
@@ -303,8 +303,8 @@ const onboarding = () => {
                 onClick={() => setBioTab("write")}
                 className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                   bioTab === "write"
-                    ? "bg-white/10 text-white"
-                    : "text-white/50 hover:text-white/80"
+                    ? "bg-white/10 text-content"
+                    : "text-content/50 hover:text-content/80"
                 }`}
               >
                 Write
@@ -323,7 +323,7 @@ const onboarding = () => {
                 {descriptionValue?.trim() ? (
                   <ReactMarkdown>{descriptionValue}</ReactMarkdown>
                 ) : (
-                  <p className="text-white/40">Nothing to preview yet.</p>
+                  <p className="text-content/40">Nothing to preview yet.</p>
                 )}
               </div>
             )}
@@ -338,7 +338,7 @@ const onboarding = () => {
           <button
             type="submit"
             disabled={updating}
-            className="w-full bg-red-800 hover:opacity-90 disabled:opacity-50 text-white font-bold py-4 rounded-xl transition-all"
+            className="w-full bg-red-800 hover:opacity-90 disabled:opacity-50 text-content font-bold py-4 rounded-xl transition-all"
           >
             {updating
               ? isEdit

@@ -46,7 +46,7 @@ const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
 
   return (
     <div className="space-y-2">
-      <label className="text-sm font-medium text-white/80">{label}</label>
+      <label className="text-sm font-medium text-content/80">{label}</label>
 
       <input
         type="file"
@@ -75,7 +75,7 @@ const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
           onClick={() => inputRef.current?.click()}
           className="w-full bg-white/5 border border-white/10 border-dashed rounded-xl px-4 py-6 text-center cursor-pointer"
         >
-          <p className="text-white/40 text-sm">Click to upload image</p>
+          <p className="text-content/40 text-sm">Click to upload image</p>
         </div>
       )}
     </div>
@@ -241,7 +241,7 @@ const CreateEventPage = ({ id }) => {
         <h1 className="text-3xl md:text-4xl font-serif text-gradient mb-2">
           {isEdit ? "Edit Event" : "Create Event"}
         </h1>
-        <p className="text-white/60">
+        <p className="text-content/60">
           Organize and share your event with the community.
         </p>
       </div>
@@ -249,7 +249,7 @@ const CreateEventPage = ({ id }) => {
       <form className="space-y-6" onSubmit={handleSubmit(handleOnSubmit)}>
         {/* Event Name */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-white/80">
+          <label className="text-sm font-medium text-content/80">
             Event Name
           </label>
           <input
@@ -265,7 +265,7 @@ const CreateEventPage = ({ id }) => {
 
         {/* Description */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-white/80">
+          <label className="text-sm font-medium text-content/80">
             Description
           </label>
           <textarea
@@ -283,7 +283,7 @@ const CreateEventPage = ({ id }) => {
 
         {/* Venue */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-white/80">Venue</label>
+          <label className="text-sm font-medium text-content/80">Venue</label>
           <input
             {...register("venue")}
             type="text"
@@ -297,7 +297,7 @@ const CreateEventPage = ({ id }) => {
 
         {/* Status */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-white/80">Status</label>
+          <label className="text-sm font-medium text-content/80">Status</label>
           <select
             {...register("status")}
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3"
@@ -309,7 +309,7 @@ const CreateEventPage = ({ id }) => {
 
         {/* Event Date */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-white/80">
+          <label className="text-sm font-medium text-content/80">
             Event Date
           </label>
           <input
@@ -339,7 +339,7 @@ const CreateEventPage = ({ id }) => {
         <button
           type="submit"
           disabled={creatingEvent || isBanned}
-          className="w-full bg-red-800 hover:bg-red-700 disabled:bg-red-800/50 text-white font-bold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2"
+          className="w-full bg-red-800 hover:bg-red-700 disabled:bg-red-800/50 text-content font-bold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2"
         >
           {creatingEvent ? "Creating Event..." : "Create Event"}
         </button>

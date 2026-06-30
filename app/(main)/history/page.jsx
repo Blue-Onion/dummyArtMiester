@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function HistoryPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-frosty text-content">
       <HistoryTimeline batches={batches} />
     </div>
   );

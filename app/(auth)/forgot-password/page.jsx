@@ -73,7 +73,7 @@ const ForgotPasswordPage = () => {
           <h1 className="animate-item text-3xl md:text-4xl font-serif text-gradient mb-2">
             Forgot Password
           </h1>
-          <p className="animate-item text-white/60 text-base">
+          <p className="animate-item text-content/60 text-base">
             No worries, we will help you reset it.
           </p>
         </div>
@@ -82,16 +82,16 @@ const ForgotPasswordPage = () => {
           <form className="space-y-4" onSubmit={handleSubmit(onsubmit)}>
             {/* Email */}
             <div className="animate-item space-y-1.5">
-              <label className="text-xs font-medium text-white/80 ml-1">
+              <label className="text-xs font-medium text-content/80 ml-1">
                 Email Address
               </label>
               <div className="relative group">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-white/40 group-focus-within:text-red-800 transition-colors" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-content/40 group-focus-within:text-red-800 transition-colors" />
                 <input
                   type="email"
                   placeholder="john@example.com"
                   {...register("email")}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-white placeholder:text-white/20"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-content placeholder:text-content/20"
                   required
                 />
                 {errors?.email && (
@@ -106,7 +106,7 @@ const ForgotPasswordPage = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="animate-item w-full bg-red-800 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-red-900/20 flex-center gap-2 group mt-2 overflow-hidden relative disabled:opacity-50"
+              className="animate-item w-full bg-red-800 hover:bg-red-700 text-content font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-red-900/20 flex-center gap-2 group mt-2 overflow-hidden relative disabled:opacity-50"
             >
               <span className="relative z-10 flex items-center gap-2 text-sm">
                 Send Instructions{" "}
@@ -117,12 +117,12 @@ const ForgotPasswordPage = () => {
           </form>
         ) : (
           <div className="space-y-6 text-center">
-            <div className="p-4 bg-red-950/20 border border-red-800/30 rounded-2xl text-white/80 text-sm leading-relaxed">
+            <div className="p-4 bg-red-950/20 border border-red-800/30 rounded-2xl text-content/80 text-sm leading-relaxed">
               If an account with that email exists, The reset Link has been sent to you. Check your spam folder as well.
             </div>
             <button
               onClick={() => reset()}
-              className="inline-flex items-center gap-2 text-white/40 text-sm hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-content/40 text-sm hover:text-content transition-colors"
             >
               Request another reset link
             </button>
@@ -132,7 +132,7 @@ const ForgotPasswordPage = () => {
         <div className="animate-item mt-6 text-center border-t border-white/5 pt-4">
           <Link
             href="/sign-in"
-            className="inline-flex items-center gap-2 text-white/40 text-sm hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-content/40 text-sm hover:text-content transition-colors"
           >
             <ArrowLeft className="size-4" /> Back to Sign In
           </Link>

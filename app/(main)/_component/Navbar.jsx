@@ -11,6 +11,7 @@ import { useAuthStore } from "@/store/user";
 import UserMenu from "@/components/UserMenu";
 import AdminMenu from "@/components/AdminMenu";
 import { canModerate } from "@/lib/roles";
+import { ThemeToggle } from "@/components/ThemeToggle";
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const user = useAuthStore((state) => state.user);
@@ -42,8 +43,8 @@ useEffect(() => {
     <nav
       className={`fixed top-4 left-1/2 z-50 w-[95%] mx-auto -translate-x-1/2 transition-all duration-300 ${
         scrolled
-          ? "rounded-2xl bg-black/20 backdrop-blur-xl text-white shadow-lg"
-          : "text-white"
+          ? "rounded-2xl bg-frosty/20 backdrop-blur-xl text-content shadow-lg"
+          : "text-content"
       }`}
     >
       <div className="flex items-center justify-between px-4 py-3">
@@ -67,10 +68,11 @@ useEffect(() => {
 
         {/* Right Side */}
 <div className="flex items-center gap-4">
+  <ThemeToggle />
   {user ? (
     <>
       <Link href={"/art/create"}>
-        <button className="border px-3 py-2 bg-black/20 rounded-full text-white flex items-center gap-2 hover:bg-black/10">
+        <button className="border px-3 py-2 bg-frosty/20 rounded-full text-content flex items-center gap-2 hover:bg-frosty/10">
           <Plus size={20} />
           <span className="text-sm font-semibold">create</span>
         </button>

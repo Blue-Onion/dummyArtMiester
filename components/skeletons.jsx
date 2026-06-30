@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 /* ─── Artist / User Profile Skeleton ─── */
 export function ProfileSkeleton() {
   return (
-    <main className="min-h-screen bg-black text-white pb-20">
+    <main className="min-h-screen bg-frosty text-content pb-20">
       {/* Banner */}
       <section className="relative h-[40vh] w-full rounded-2xl overflow-hidden">
         <Skeleton className="w-full h-full" />
@@ -69,7 +69,7 @@ export function ProfileSkeleton() {
 /* ─── Art Detail Page Skeleton ─── */
 export function ArtDetailSkeleton() {
   return (
-    <main className="min-h-screen bg-black text-white pb-20 pt-8 px-6 md:px-12">
+    <main className="min-h-screen bg-frosty text-content pb-20 pt-8 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <Skeleton className="h-5 w-44 rounded-lg mb-8" />
 
@@ -109,7 +109,7 @@ const handle = () => {};
 /* ─── Event Detail Page Skeleton ─── */
 export function EventDetailSkeleton() {
   return (
-    <main className="min-h-screen bg-black text-white pb-20">
+    <main className="min-h-screen bg-frosty text-content pb-20">
       {/* Banner */}
       <section className="w-full">
         <div className="relative w-full h-[300px] md:h-[480px] overflow-hidden border-y border-white/10">
@@ -199,7 +199,7 @@ export function EventsListSkeleton({ count = 3 }) {
 /* ─── Admin Dashboard Skeleton ─── */
 export function AdminSkeleton() {
   return (
-    <section className="min-h-screen py-16 px-4 md:px-8 bg-black">
+    <section className="min-h-screen py-16 px-4 md:px-8 bg-frosty">
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-4 mb-10">
           <Skeleton className="h-14 w-80 mx-auto rounded-xl" />
@@ -243,7 +243,7 @@ export function ArtGallerySkeleton() {
   const heights = [320, 240, 400, 280, 360, 300, 260, 420, 300, 340, 280, 380];
   return (
     <section>
-      <div className="min-h-screen bg-black text-white px-6 py-10">
+      <div className="min-h-screen bg-frosty text-content px-6 py-10">
         <div className="mb-10 text-center space-y-3">
           <Skeleton className="h-12 w-72 mx-auto rounded-xl" />
           <Skeleton className="h-5 w-64 mx-auto rounded-lg" />

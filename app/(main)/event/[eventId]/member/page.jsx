@@ -50,7 +50,7 @@ if(loading){
 }
 
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-10">
+    <main className="min-h-screen bg-frosty text-content px-6 py-10">
       <div className="max-w-5xl mx-auto">
         <div className="mb-10">
           <h1 className="text-4xl font-bold tracking-tight">Event Attendees</h1>

@@ -10,6 +10,9 @@ export const getAllUser=()=>{
 export const getAllApprovedUser=()=>{
   return api(`/auth/main-users`);
 }
+export const getAllCoreMemberUser=()=>{
+  return api(`/auth/core-member`);
+}
 export const updateUser = async (id, data) => {
   return api(`/auth/users/${id}`, {
     method: "PATCH",

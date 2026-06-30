@@ -94,7 +94,7 @@ export const Events = () => {
             <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
 
             <div className="absolute bottom-0 left-0 p-8 w-full">
-              <span className="bg-accent text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider mb-4 inline-block">
+              <span className="bg-accent text-content text-xs font-bold px-3 py-1 rounded uppercase tracking-wider mb-4 inline-block">
                 {selectedEvent?.Status?.String}
               </span>
 
@@ -126,7 +126,7 @@ export const Events = () => {
               </div>
 
               <Link href={`/event/${selectedEvent.ID}`} className="w-fit">
-                <button className="bg-accent hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium flex items-center gap-2 transition-all">
+                <button className="bg-accent hover:bg-red-700 text-content px-6 py-2 rounded-full font-medium flex items-center gap-2 transition-all">
                   LEARN MORE <MoveRight size={16} />
                 </button>
               </Link>

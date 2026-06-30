@@ -5,6 +5,7 @@ import data from "@/data.json";
 import Image from "next/image";
 import Link from "next/link";
 import { Plus } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 import useFetch from "@/hooks/useFetch";
 import { getCurrUser } from "@/service/auth";
 import UserMenu from "./UserMenu";
@@ -44,8 +45,8 @@ export const Navbar = () => {
     <nav
       className={`fixed top-4 left-1/2 z-50 w-[95%] mx-auto -translate-x-1/2 transition-all duration-300 ${
         scrolled
-          ? "rounded-2xl bg-black/20 backdrop-blur-xl text-white shadow-lg"
-          : "text-white"
+          ? "rounded-2xl bg-frosty/20 backdrop-blur-xl text-content shadow-lg"
+          : "text-content"
       }`}
     >
       <div className="flex items-center justify-between px-4 py-3">
@@ -86,10 +87,11 @@ export const Navbar = () => {
 
         {/* Right Side */}
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           {user ? (
             <>
               <Link href={"/art/create"}>
-                <button className="border px-3 py-2 bg-black/20 rounded-full text-white flex items-center gap-2 hover:bg-black/10">
+                <button className="border px-3 py-2 bg-frosty/20 rounded-full text-content flex items-center gap-2 hover:bg-frosty/10">
                   <Plus size={20} />
                   <span className="text-sm font-semibold">create</span>
                 </button>

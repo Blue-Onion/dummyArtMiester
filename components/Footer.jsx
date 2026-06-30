@@ -7,12 +7,12 @@ const footer = data.footer;
 
 export const Footer = () => {
     return (
-        <footer className="border-t border-white/10 pt-16 pb-8 bg-black">
+        <footer className="border-t border-white/10 pt-16 pb-8 bg-frosty">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-center">
                         <div className="flex items-center gap-3 mb-6 justify-center">
-                            <div className="w-10 h-10 bg-accent text-white font-heading font-bold text-xl flex items-center justify-center transform -skew-x-12">
+                            <div className="w-10 h-10 bg-accent text-content font-heading font-bold text-xl flex items-center justify-center transform -skew-x-12">
                                 {data.logoLetter}
                             </div>
                             <span className="font-heading font-bold text-xl tracking-wider">{data.siteName}</span>

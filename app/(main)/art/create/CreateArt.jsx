@@ -193,7 +193,7 @@ const CreateArt = ({ artid }) => {
             <h1 className="text-3xl md:text-4xl font-serif text-gradient mb-2">
               {isEdit ? "Edit Art" : "Upload Art"}
             </h1>
-            <p className="text-white/60">
+            <p className="text-content/60">
               Share your creativity with the world.
             </p>
           </div>
@@ -201,7 +201,7 @@ const CreateArt = ({ artid }) => {
           <form onSubmit={handleSubmit(handleOnSubmit)}>
             {/* Upload Image */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">
+              <label className="text-sm font-medium text-content/80">
                 Artwork Image
               </label>
 
@@ -216,7 +216,7 @@ const CreateArt = ({ artid }) => {
                     <button
                       type="button"
                       onClick={handleRemove}
-                      className="absolute top-2 right-2 bg-black/60 hover:bg-black/80 text-white rounded-full p-1.5 transition-all"
+                      className="absolute top-2 right-2 bg-frosty/60 hover:bg-frosty/80 text-content rounded-full p-1.5 transition-all"
                     >
                       <X size={16} />
                     </button>
@@ -224,11 +224,11 @@ const CreateArt = ({ artid }) => {
                 </div>
               ) : (
                 <label className="flex flex-col items-center justify-center border-2 border-dashed border-white/10 rounded-2xl p-10 cursor-pointer hover:border-red-800/40 transition-all">
-                  <Upload size={40} className="text-white/40 mb-3" />
-                  <span className="text-white/70 font-medium">
+                  <Upload size={40} className="text-content/40 mb-3" />
+                  <span className="text-content/70 font-medium">
                     Click to upload artwork
                   </span>
-                  <span className="text-white/30 text-sm mt-1">
+                  <span className="text-content/30 text-sm mt-1">
                     PNG, JPG, WEBP
                   </span>
                   <input
@@ -243,14 +243,14 @@ const CreateArt = ({ artid }) => {
             </div>
             {/* Title */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">
+              <label className="text-sm font-medium text-content/80">
                 Artwork Title
               </label>
               <input
                 type="text"
                 placeholder="Sunset Dreams"
                 {...register("name")}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-white placeholder:text-white/20"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-content placeholder:text-content/20"
               />
               {errors.name?.message && (
                 <p className="text-red-800/50 text-sm">
@@ -261,7 +261,7 @@ const CreateArt = ({ artid }) => {
 
             {/* Category */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">
+              <label className="text-sm font-medium text-content/80">
                 Category
               </label>
               <Popover>
@@ -323,14 +323,14 @@ const CreateArt = ({ artid }) => {
 
             {/* Description */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">
+              <label className="text-sm font-medium text-content/80">
                 Description
               </label>
               <textarea
                 rows={5}
                 placeholder="Tell viewers about your artwork..."
                 {...register("description")}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-white placeholder:text-white/20 resize-none"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-content placeholder:text-content/20 resize-none"
               />
               {errors.description?.message && (
                 <p className="text-red-800/50 text-sm">
@@ -343,7 +343,7 @@ const CreateArt = ({ artid }) => {
             <button
               type="submit"
               disabled={isBanned || createLoading || updateLoading}
-              className="w-full bg-red-800 hover:bg-red-700 disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:shadow-none text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-red-900/20 flex items-center justify-center gap-2 group"
+              className="w-full bg-red-800 hover:bg-red-700 disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:shadow-none text-content font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-red-900/20 flex items-center justify-center gap-2 group"
             >
               {createLoading || updateLoading ? (
                 <>

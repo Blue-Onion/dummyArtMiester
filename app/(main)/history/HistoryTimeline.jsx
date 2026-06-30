@@ -15,7 +15,7 @@ export default function HistoryTimeline({ batches }) {
         <Badge variant="outline" className="px-4 py-1.5 border-red-800 text-red-500 uppercase tracking-widest text-xs font-semibold bg-red-950/20">
           Our Chronicle
         </Badge>
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-white tracking-tight leading-none">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-content tracking-tight leading-none">
           Legacy & Batches
         </h1>
         <p className="text-sm sm:text-lg text-neutral-400 max-w-2xl mx-auto font-sans leading-relaxed">
@@ -55,7 +55,7 @@ export default function HistoryTimeline({ batches }) {
                           sizes="(max-w-768px) 100vw, 50vw"
                         />
                         <div className="absolute top-4 left-4 z-20">
-                          <Badge className="bg-red-800 text-white font-mono text-sm px-3 py-1 font-semibold border-none hover:bg-red-700">
+                          <Badge className="bg-red-800 text-content font-mono text-sm px-3 py-1 font-semibold border-none hover:bg-red-700">
                             {batch.timelineYear}
                           </Badge>
                         </div>
@@ -64,7 +64,7 @@ export default function HistoryTimeline({ batches }) {
                       {/* Content */}
                       <CardContent className="p-6 sm:p-8 space-y-4">
                         <div className="space-y-2">
-                          <h2 className="text-2xl sm:text-3xl font-serif text-white group-hover:text-red-400 transition-colors">
+                          <h2 className="text-2xl sm:text-3xl font-serif text-content group-hover:text-red-400 transition-colors">
                             {batch.name}
                           </h2>
                           <p className="text-xs sm:text-sm font-sans font-medium text-red-500/80 uppercase tracking-widest">
@@ -123,7 +123,7 @@ export default function HistoryTimeline({ batches }) {
                   {/* Outer circle glow */}
                   <div className="absolute h-10 w-10 rounded-full bg-red-900/30 blur-sm scale-150 animate-pulse hidden md:block" />
                   {/* Central Node */}
-                  <div className="relative h-6 w-6 rounded-full border-2 border-red-700 bg-black items-center justify-center z-20 hidden md:flex">
+                  <div className="relative h-6 w-6 rounded-full border-2 border-red-700 bg-frosty items-center justify-center z-20 hidden md:flex">
                     <div className="h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse" />
                   </div>
                 </div>
