@@ -188,7 +188,7 @@ const CreateArt = ({ artid }) => {
         <div className="absolute top-1/4 -left-20 w-64 h-64 bg-red-800/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-yellow/10 rounded-full blur-3xl animate-pulse delay-700" />
 
-        <div className="auth-card w-full max-w-2xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl relative z-10 mx-auto">
+        <div className="auth-card w-full max-w-2xl bg-overlay/5 backdrop-blur-xl border border-overlay/10 rounded-3xl p-6 md:p-8 shadow-2xl relative z-10 mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-4xl font-serif text-gradient mb-2">
               {isEdit ? "Edit Art" : "Upload Art"}
@@ -206,7 +206,7 @@ const CreateArt = ({ artid }) => {
               </label>
 
               {preview ? (
-                <div className="relative rounded-2xl overflow-hidden border-2 border-white/10">
+                <div className="relative rounded-2xl overflow-hidden border-2 border-overlay/10">
                   <img
                     src={preview}
                     alt="Artwork preview"
@@ -223,7 +223,7 @@ const CreateArt = ({ artid }) => {
                   )}
                 </div>
               ) : (
-                <label className="flex flex-col items-center justify-center border-2 border-dashed border-white/10 rounded-2xl p-10 cursor-pointer hover:border-red-800/40 transition-all">
+                <label className="flex flex-col items-center justify-center border-2 border-dashed border-overlay/10 rounded-2xl p-10 cursor-pointer hover:border-red-800/40 transition-all">
                   <Upload size={40} className="text-content/40 mb-3" />
                   <span className="text-content/70 font-medium">
                     Click to upload artwork
@@ -250,7 +250,7 @@ const CreateArt = ({ artid }) => {
                 type="text"
                 placeholder="Sunset Dreams"
                 {...register("name")}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-content placeholder:text-content/20"
+                className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3 outline-none focus:border-red-800/50 focus:bg-overlay/10 transition-all text-content placeholder:text-content/20"
               />
               {errors.name?.message && (
                 <p className="text-red-800/50 text-sm">
@@ -330,7 +330,7 @@ const CreateArt = ({ artid }) => {
                 rows={5}
                 placeholder="Tell viewers about your artwork..."
                 {...register("description")}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-content placeholder:text-content/20 resize-none"
+                className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3 outline-none focus:border-red-800/50 focus:bg-overlay/10 transition-all text-content placeholder:text-content/20 resize-none"
               />
               {errors.description?.message && (
                 <p className="text-red-800/50 text-sm">
@@ -347,7 +347,7 @@ const CreateArt = ({ artid }) => {
             >
               {createLoading || updateLoading ? (
                 <>
-                  <div className="size-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <div className="size-4 border-2 border-overlay/30 border-t-content rounded-full animate-spin" />
                   {isEdit ? "Updating..." : "Uploading..."}
                 </>
               ) : isBanned ? (

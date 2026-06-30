@@ -7,7 +7,7 @@ const footer = data.footer;
 
 export const Footer = () => {
     return (
-        <footer className="border-t border-white/10 pt-16 pb-8 bg-frosty">
+        <footer className="border-t border-overlay/10 pt-16 pb-8 bg-frosty">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-center">
@@ -30,7 +30,7 @@ export const Footer = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-gray-500">
+                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-overlay/10 text-xs text-gray-500">
                     <p>{footer.copyright}</p>
                     <p className="mt-2 md:mt-0 flex items-center gap-1">Designed with <Heart size={12} className="text-accent" /> by Art Meisters Team</p>
                 </div>

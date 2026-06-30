@@ -217,7 +217,7 @@ export default function EventDetail() {
   return (
     <main className="min-h-screen bg-frosty text-content selection:bg-red-500 pb-20">
       <section className="w-full ">
-        <div className="relative w-full h-[300px] md:h-[480px] overflow-hidden border-y border-white/10">
+        <div className="relative w-full h-[300px] md:h-[480px] overflow-hidden border-y border-overlay/10">
           <img
             src={bannerSrc}
             alt={event.Name || "Event Banner"}
@@ -229,7 +229,7 @@ export default function EventDetail() {
           <div className="absolute inset-0 flex items-end">
             <div className="max-w-6xl mx-auto w-full px-6 md:px-12 pb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <div className="flex items-center gap-5">
-                <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl overflow-hidden bg-frosty/60 backdrop-blur-md border border-white/10 shadow-xl flex items-center justify-center">
+                <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl overflow-hidden bg-frosty/60 backdrop-blur-md border border-overlay/10 shadow-xl flex items-center justify-center">
                   <img
                     src={logoSrc}
                     alt="Event Logo"
@@ -245,7 +245,7 @@ export default function EventDetail() {
                           ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
                           : eventState === "Ongoing"
                             ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                            : "bg-white/10 text-gray-300 border border-white/10"
+                            : "bg-overlay/10 text-gray-300 border border-overlay/10"
                       }`}
                     >
                       {eventState === "Upcoming"
@@ -263,7 +263,7 @@ export default function EventDetail() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-xl bg-frosty/70 backdrop-blur-md border border-white/10">
+                <div className="flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-xl bg-frosty/70 backdrop-blur-md border border-overlay/10">
                   <span className="text-content font-bold text-2xl md:text-3xl leading-none">
                     {day}
                   </span>
@@ -347,7 +347,7 @@ export default function EventDetail() {
       </section>
 
       <section className="max-w-4xl mx-auto px-6 md:px-12 mt-12 space-y-8">
-        <div className="rounded-2xl p-8 border border-white/10 bg-white/5 backdrop-blur-md">
+        <div className="rounded-2xl p-8 border border-overlay/10 bg-overlay/5 backdrop-blur-md">
           <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
             <Calendar size={20} className="text-red-400" />
             Event Details
@@ -398,7 +398,7 @@ export default function EventDetail() {
           </div>
         </div>
 
-        <div className="rounded-2xl p-8 md:p-10 border border-white/10 bg-white/5 backdrop-blur-md">
+        <div className="rounded-2xl p-8 md:p-10 border border-overlay/10 bg-overlay/5 backdrop-blur-md">
           <h2 className="text-2xl font-bold mb-4">About This Event</h2>
           <p className="text-gray-300 leading-relaxed text-lg">
             {event.Description?.String}

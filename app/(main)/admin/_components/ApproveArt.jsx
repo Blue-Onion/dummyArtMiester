@@ -37,8 +37,8 @@ const ApproveArt = ({ art }) => {
   }, [error, res]);
 if(!artWorks){
     return (
-        <div className="col-span-1 md:col-span-2 flex flex-col items-center justify-center py-16 text-center border border-white/5 rounded-2xl bg-white/5 border-dashed space-y-3">
-            <div className="p-4 rounded-full bg-white/5 text-gray-500">
+        <div className="col-span-1 md:col-span-2 flex flex-col items-center justify-center py-16 text-center border border-overlay/5 rounded-2xl bg-overlay/5 border-dashed space-y-3">
+            <div className="p-4 rounded-full bg-overlay/5 text-gray-500">
               <ImageIcon className="w-8 h-8" />
             </div>
             <div>
@@ -59,7 +59,7 @@ if(!artWorks){
             Review newly submitted artworks for curation and verification in the gallery.
           </p>
         </div>
-        <div className="px-4 py-2 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md text-sm text-gray-300 font-medium">
+        <div className="px-4 py-2 rounded-xl border border-overlay/10 bg-overlay/5 backdrop-blur-md text-sm text-gray-300 font-medium">
           Pending Review: <span className="text-red-500 font-semibold">{artWorks?.length || 0}</span>
         </div>
       </div>
@@ -68,7 +68,7 @@ if(!artWorks){
         {artWorks?.map((artItem) => (
           <div
             key={artItem.ID}
-            className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden flex flex-col hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.02)]"
+            className="group rounded-2xl border border-overlay/10 bg-overlay/5 backdrop-blur-md overflow-hidden flex flex-col hover:border-overlay/20 transition-all duration-300 hover:shadow-glow"
           >
             {/* Image Section */}
             <div className="h-56 w-full relative overflow-hidden bg-frosty/40">
@@ -78,7 +78,7 @@ if(!artWorks){
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute top-3 right-3">
-                <Badge className="bg-frosty/60 backdrop-blur-md text-content border-white/15 capitalize font-medium text-xs">
+                <Badge className="bg-frosty/60 backdrop-blur-md text-content border-overlay/15 capitalize font-medium text-xs">
                   {artItem.Status}
                 </Badge>
               </div>
@@ -95,7 +95,7 @@ if(!artWorks){
                     href={artItem.Image}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-content p-1 rounded-md hover:bg-white/5 transition-colors"
+                    className="text-gray-400 hover:text-content p-1 rounded-md hover:bg-overlay/5 transition-colors"
                     title="Open full size image"
                   >
                     <ExternalLink className="w-4 h-4" />
@@ -115,7 +115,7 @@ if(!artWorks){
                       <Badge
                         key={idx}
                         variant="secondary"
-                        className="bg-white/5 text-gray-300 border-white/5 text-[10px] font-normal px-2 py-0"
+                        className="bg-overlay/5 text-gray-300 border-overlay/5 text-[10px] font-normal px-2 py-0"
                       >
                         <Tag className="w-2.5 h-2.5 mr-1 text-gray-400" />
                         {tag}
@@ -126,7 +126,7 @@ if(!artWorks){
               </div>
 
               {/* Footer and Actions */}
-              <div className="space-y-4 pt-2 border-t border-white/5">
+              <div className="space-y-4 pt-2 border-t border-overlay/5">
                 <div className="flex items-center text-xs text-gray-400 gap-1.5">
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Submitted: {new Date(artItem.CreatedAt).toLocaleDateString(undefined, {

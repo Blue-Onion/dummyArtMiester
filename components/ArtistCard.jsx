@@ -5,7 +5,7 @@ export function ArtistCard({ id, name, role, img, instagram, youtube }) {
 
     
     return (
-        <div className="glass rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(229,9,20,0.1)] hover:border-white/20 flex flex-col h-full">
+        <div className="glass rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(229,9,20,0.1)] hover:border-overlay/20 flex flex-col h-full">
             <Link href={`/u/${id}`} className="flex-1 flex flex-col">
                 <div className="h-64 overflow-hidden relative">
                     <img
@@ -22,10 +22,10 @@ export function ArtistCard({ id, name, role, img, instagram, youtube }) {
             </Link>
             <div className="px-6 pb-6 mt-auto">
                 <div className="flex gap-3">
-                    <a href={instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded border border-white/10 flex items-center justify-center text-gray-400 hover:text-content hover:border-accent hover:bg-accent/10 transition-colors">
+                    <a href={instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded border border-overlay/10 flex items-center justify-center text-gray-400 hover:text-content hover:border-accent hover:bg-accent/10 transition-colors">
                         <img src="/instagram.svg" alt="Instagram" width="14" height="14" />
                     </a>
-                    <a href={youtube} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded border border-white/10 flex items-center justify-center text-gray-400 hover:text-content hover:border-accent hover:bg-accent/10 transition-colors">
+                    <a href={youtube} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded border border-overlay/10 flex items-center justify-center text-gray-400 hover:text-content hover:border-accent hover:bg-accent/10 transition-colors">
                         <img src="/youtube.svg" alt="YouTube" width="14" height="14" />
                     </a>
                 </div>

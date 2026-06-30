@@ -150,12 +150,12 @@ export default function ArtPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* LEFT SIDE - Artwork */}
-          <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-white/5 group min-h-[500px] flex items-center justify-center bg-frosty/40">
+          <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-overlay/5 group min-h-[500px] flex items-center justify-center bg-frosty/40">
             {/* Action Buttons */}
     
 
             {/* Artwork Image */}
-            <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-white/5 group min-h-[500px] bg-frosty/40">
+            <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-overlay/5 group min-h-[500px] bg-frosty/40">
               {/* Action Buttons */}
               <div className="absolute top-6 right-6 z-20 flex gap-3">
                 {/* Artist Actions */}
@@ -164,7 +164,7 @@ export default function ArtPage() {
                     {/* Edit */}
                     <Link
                       href={`/art/create?id=${artId}`}
-                      className="w-12 h-12 flex items-center justify-center rounded-full bg-frosty/50 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all"
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-frosty/50 backdrop-blur-md border border-overlay/10 hover:bg-overlay/10 transition-all"
                     >
                       <Pencil
                         size={18}
@@ -260,7 +260,7 @@ export default function ArtPage() {
           {/* RIGHT SIDE */}
           <div className="flex flex-col gap-6">
             {/* About Artwork */}
-            <div className="glass rounded-3xl p-8 border border-white/5">
+            <div className="glass rounded-3xl p-8 border border-overlay/5 shadow-sm">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 tracking-tight">
                 {art?.data?.Name}
               </h1>
@@ -276,14 +276,14 @@ export default function ArtPage() {
             </div>
 
             {/* Artist Profile */}
-            <div className="glass rounded-3xl p-8 border border-white/5 flex flex-col justify-between">
+            <div className="glass rounded-3xl p-8 border border-overlay/5 shadow-sm flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-content/80 mb-5 uppercase tracking-wide">
                   Artist Profile
                 </h3>
 
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-[72px] h-[72px] rounded-full overflow-hidden border-2 border-white/10 shrink-0">
+                  <div className="w-[72px] h-[72px] rounded-full overflow-hidden border-2 border-overlay/10 shrink-0">
                     <img
                       src={artist?.image || "/placeholder.png"}
                       alt={artist?.username || "Artist"}
@@ -301,7 +301,7 @@ export default function ArtPage() {
 
               <Link
                 href={`/u/${art?.data?.UserID}`}
-                className="inline-flex items-center justify-between w-full py-3 px-4 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 transition-colors group"
+                className="inline-flex items-center justify-between w-full py-3 px-4 bg-overlay/5 hover:bg-overlay/10 rounded-xl border border-overlay/10 transition-colors group"
               >
                 <span className="text-sm font-semibold">View Profile</span>
                 <ArrowRight

@@ -11,6 +11,7 @@
 @theme {
   --color-frosty: #F0F6FA;
   --color-content: #000;
+  --color-overlay: var(--overlay);
   --color-yellow: #e7d393;
   --color-white-100: #efefef;
   --font-sans: "Mona Sans", sans-serif;
@@ -61,7 +62,7 @@ body {
 }
 
 @utility text-gradient {
-  background: linear-gradient(to bottom, #000000, #555555);
+  background: linear-gradient(to bottom, var(--text-gradient-from), var(--text-gradient-to));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -74,6 +75,10 @@ body {
     #F0F6FA 50%,
     transparent 100%
   );
+}
+
+@utility shadow-glow {
+  box-shadow: 0 0 20px color-mix(in srgb, var(--overlay) 2%, transparent);
 }
 
 @layer components {
@@ -182,7 +187,7 @@ body {
   @apply flex-center flex-col min-h-dvh p-5 mt-20 relative radial-gradient;
 
   h2 {
-    @apply relative md:text-[20vw] text-8xl text-nowrap leading-none text-center text-[#505050] mb-8;
+    @apply relative md:text-[20vw] text-8xl text-nowrap leading-none text-center text-content/30 mb-8;
   }
 
   .content {
@@ -258,6 +263,9 @@ body {
 :root {
   --color-frosty: #F0F6FA;
   --color-content: #000;
+  --overlay: #000;
+  --text-gradient-from: #000;
+  --text-gradient-to: #555;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -295,6 +303,9 @@ body {
 .dark {
   --color-frosty: #000;
   --color-content: #fff;
+  --overlay: #fff;
+  --text-gradient-from: #fff;
+  --text-gradient-to: #999;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -350,10 +361,10 @@ body {
   @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-500 dark:text-gray-400 mb-4;
 }
 .markdown-content code {
-  @apply bg-black/5 dark:bg-white/10 px-1.5 py-0.5 rounded text-sm text-gray-700 dark:text-gray-300;
+  @apply bg-black/5 dark:bg-overlay/10 px-1.5 py-0.5 rounded text-sm text-gray-700 dark:text-gray-300;
 }
 .markdown-content pre {
-  @apply bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-4 mb-4 overflow-x-auto;
+  @apply bg-black/5 dark:bg-overlay/5 border border-black/10 dark:border-overlay/10 rounded-xl p-4 mb-4 overflow-x-auto;
 }
 .markdown-content pre code {
   @apply bg-transparent p-0;

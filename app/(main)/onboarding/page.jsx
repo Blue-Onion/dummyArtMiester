@@ -58,7 +58,7 @@ const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
       />
 
       {preview ? (
-        <div className="relative w-full rounded-xl overflow-hidden border border-white/10">
+        <div className="relative w-full rounded-xl overflow-hidden border border-overlay/10">
           <img src={preview} className="w-full max-h-48 object-cover" />
 
           <div className="absolute top-2 right-2 flex gap-2">
@@ -74,7 +74,7 @@ const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
       ) : (
         <div
           onClick={() => inputRef.current?.click()}
-          className="w-full bg-white/5 border border-white/10 border-dashed rounded-xl px-4 py-6 text-center cursor-pointer"
+          className="w-full bg-overlay/5 border border-overlay/10 border-dashed rounded-xl px-4 py-6 text-center cursor-pointer"
         >
           <p className="text-content/40 text-sm">Click to upload image</p>
         </div>
@@ -179,7 +179,7 @@ const onboarding = () => {
   const bannerRef = useRef(null);
   return (
     <div className="min-h-screen bg-frosty text-content flex items-center justify-center px-6 py-16">
-      <section className="w-full max-w-3xl glass rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl">
+      <section className="w-full max-w-3xl glass rounded-3xl border border-overlay/10 p-8 md:p-12 shadow-2xl">
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-serif text-gradient mb-3">
@@ -226,7 +226,7 @@ const onboarding = () => {
                 type="text"
                 {...register("username")}
                 placeholder="blueonion"
-                className="w-full pl-8 bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent transition-all"
+                className="w-full pl-8 bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent transition-all"
               />
             </div>
 
@@ -245,7 +245,7 @@ const onboarding = () => {
               type="text"
               {...register("batch")}
               placeholder="2026"
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent transition-all"
+              className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent transition-all"
             />
 
             {errors.batch && (
@@ -264,7 +264,7 @@ const onboarding = () => {
                 type="url"
                 {...register("instagram")}
                 placeholder="https://instagram.com/yourname"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent transition-all"
+                className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent transition-all"
               />
             </div>
 
@@ -277,7 +277,7 @@ const onboarding = () => {
                 type="url"
                 {...register("youtube")}
                 placeholder="https://youtube.com/@yourchannel"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent transition-all"
+                className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3 focus:outline-none focus:border-accent transition-all"
               />
             </div>
           </div>
@@ -286,13 +286,13 @@ const onboarding = () => {
           <div className="space-y-2">
             <label className="text-sm font-medium text-content/80">Bio</label>
 
-            <div className="flex gap-1 p-1 bg-white/5 border border-white/10 rounded-t-xl">
+            <div className="flex gap-1 p-1 bg-overlay/5 border border-overlay/10 rounded-t-xl">
               <button
                 type="button"
                 onClick={() => setBioTab("preview")}
                 className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                   bioTab === "preview"
-                    ? "bg-white/10 text-content"
+                    ? "bg-overlay/10 text-content"
                     : "text-content/50 hover:text-content/80"
                 }`}
               >
@@ -303,7 +303,7 @@ const onboarding = () => {
                 onClick={() => setBioTab("write")}
                 className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                   bioTab === "write"
-                    ? "bg-white/10 text-content"
+                    ? "bg-overlay/10 text-content"
                     : "text-content/50 hover:text-content/80"
                 }`}
               >
@@ -316,10 +316,10 @@ const onboarding = () => {
                 rows={14}
                 {...register("description")}
                 placeholder="Tell the world about your art, style, or creative journey...&#10;&#10;You can use **markdown** for formatting:&#10;- Lists&#10;- *Italic* and **bold**&#10;- [Links](url)&#10;- Headers&#10;- And more!"
-                className="w-full bg-white/5 border-x border-b border-white/10 rounded-b-xl px-4 py-3 resize-none focus:outline-none focus:border-accent transition-all"
+                className="w-full bg-overlay/5 border-x border-b border-overlay/10 rounded-b-xl px-4 py-3 resize-none focus:outline-none focus:border-accent transition-all"
               />
             ) : (
-              <div className="w-full min-h-[336px] bg-white/5 border-x border-b border-white/10 rounded-b-xl px-4 py-3 markdown-content">
+              <div className="w-full min-h-[336px] bg-overlay/5 border-x border-b border-overlay/10 rounded-b-xl px-4 py-3 markdown-content">
                 {descriptionValue?.trim() ? (
                   <ReactMarkdown>{descriptionValue}</ReactMarkdown>
                 ) : (

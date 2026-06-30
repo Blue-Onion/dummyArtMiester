@@ -68,7 +68,7 @@ const ForgotPasswordPage = () => {
       <div className="absolute top-1/4 -left-20 w-64 h-64 bg-red-800/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-yellow/10 rounded-full blur-3xl animate-pulse delay-700" />
 
-      <div className="auth-card w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl relative z-10 mx-auto">
+      <div className="auth-card w-md bg-overlay/5 backdrop-blur-xl border border-overlay/10 rounded-3xl p-6 md:p-8 shadow-2xl relative z-10 mx-auto">
         <div className="text-center mb-6">
           <h1 className="animate-item text-3xl md:text-4xl font-serif text-gradient mb-2">
             Forgot Password
@@ -91,7 +91,7 @@ const ForgotPasswordPage = () => {
                   type="email"
                   placeholder="john@example.com"
                   {...register("email")}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 outline-none focus:border-red-800/50 focus:bg-white/10 transition-all text-sm text-content placeholder:text-content/20"
+                  className="w-full bg-overlay/5 border border-overlay/10 rounded-xl py-3 pl-11 pr-4 outline-none focus:border-red-800/50 focus:bg-overlay/10 transition-all text-sm text-content placeholder:text-content/20"
                   required
                 />
                 {errors?.email && (
@@ -129,7 +129,7 @@ const ForgotPasswordPage = () => {
           </div>
         )}
 
-        <div className="animate-item mt-6 text-center border-t border-white/5 pt-4">
+        <div className="animate-item mt-6 text-center border-t border-overlay/5 pt-4">
           <Link
             href="/sign-in"
             className="inline-flex items-center gap-2 text-content/40 text-sm hover:text-content transition-colors"

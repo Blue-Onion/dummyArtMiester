@@ -11,6 +11,9 @@ export function ThemeToggle() {
     root.classList.toggle("dark", isDark);
     root.style.setProperty("--color-frosty", isDark ? "#000" : "#F0F6FA");
     root.style.setProperty("--color-content", isDark ? "#fff" : "#000");
+    root.style.setProperty("--overlay", isDark ? "#fff" : "#000");
+    root.style.setProperty("--text-gradient-from", isDark ? "#fff" : "#000");
+    root.style.setProperty("--text-gradient-to", isDark ? "#999" : "#555");
   };
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="p-2 rounded-full transition-colors hover:bg-black/10 dark:hover:bg-white/10"
+      className="p-2 rounded-full transition-colors hover:bg-black/10 dark:hover:bg-overlay/10"
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {dark ? <Sun size={18} /> : <Moon size={18} />}

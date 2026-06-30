@@ -26,7 +26,7 @@ export function ProfileSkeleton() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-40 grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Sidebar */}
         <div className="lg:col-span-1 space-y-8">
-          <div className="rounded-2xl p-8 border border-white/5 bg-white/2 space-y-6">
+          <div className="rounded-2xl p-8 border border-overlay/5 bg-overlay/2 space-y-6">
             <Skeleton className="h-6 w-36 rounded-lg" />
             <div className="space-y-4">
               {[1, 2, 3].map((i) => (
@@ -42,7 +42,7 @@ export function ProfileSkeleton() {
         {/* Main */}
         <div className="lg:col-span-2 space-y-12">
           {/* About */}
-          <div className="rounded-2xl p-10 border border-white/5 bg-white/2 space-y-4">
+          <div className="rounded-2xl p-10 border border-overlay/5 bg-overlay/2 space-y-4">
             <Skeleton className="h-7 w-24 rounded-lg" />
             <div className="space-y-2">
               <Skeleton className="h-4 w-full rounded" />
@@ -75,13 +75,13 @@ export function ArtDetailSkeleton() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Image */}
-          <div className="md:col-span-2 rounded-3xl overflow-hidden border border-white/5 min-h-[500px] bg-white/2">
+          <div className="md:col-span-2 rounded-3xl overflow-hidden border border-overlay/5 min-h-[500px] bg-overlay/2">
             <Skeleton className="w-full h-full min-h-[500px] rounded-3xl" />
           </div>
 
           {/* Sidebar */}
           <div className="flex flex-col gap-6">
-            <div className="rounded-3xl p-8 border border-white/5 bg-white/2 space-y-6">
+            <div className="rounded-3xl p-8 border border-overlay/5 bg-overlay/2 space-y-6">
               <Skeleton className="h-12 w-full rounded-xl" />
               <Skeleton className="h-5 w-36 rounded-lg" />
               <div className="space-y-2">
@@ -91,7 +91,7 @@ export function ArtDetailSkeleton() {
               </div>
             </div>
 
-            <div className="rounded-3xl p-8 border border-white/5 bg-white/2 space-y-5">
+            <div className="rounded-3xl p-8 border border-overlay/5 bg-overlay/2 space-y-5">
               <Skeleton className="h-5 w-28 rounded-lg" />
               <div className="flex items-center gap-4">
                 <Skeleton className="w-[72px] h-[72px] rounded-full shrink-0" />
@@ -112,7 +112,7 @@ export function EventDetailSkeleton() {
     <main className="min-h-screen bg-frosty text-content pb-20">
       {/* Banner */}
       <section className="w-full">
-        <div className="relative w-full h-[300px] md:h-[480px] overflow-hidden border-y border-white/10">
+        <div className="relative w-full h-[300px] md:h-[480px] overflow-hidden border-y border-overlay/10">
           <Skeleton className="w-full h-full" />
 
           <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
@@ -141,7 +141,7 @@ export function EventDetailSkeleton() {
 
       {/* Details */}
       <section className="max-w-4xl mx-auto px-6 md:px-12 mt-12 space-y-8">
-        <div className="rounded-2xl p-8 border border-white/10 bg-white/2 space-y-6">
+        <div className="rounded-2xl p-8 border border-overlay/10 bg-overlay/2 space-y-6">
           <Skeleton className="h-6 w-36 rounded-lg" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[1, 2, 3, 4].map((i) => (
@@ -153,7 +153,7 @@ export function EventDetailSkeleton() {
           </div>
         </div>
 
-        <div className="rounded-2xl p-8 md:p-10 border border-white/10 bg-white/2 space-y-4">
+        <div className="rounded-2xl p-8 md:p-10 border border-overlay/10 bg-overlay/2 space-y-4">
           <Skeleton className="h-7 w-44 rounded-lg" />
           <div className="space-y-2">
             <Skeleton className="h-4 w-full rounded" />
@@ -174,7 +174,7 @@ export function EventsListSkeleton({ count = 3 }) {
       {Array.from({ length: count }).map((_, i) => (
         <div
           key={i}
-          className="rounded-[2.5rem] border border-white/10 bg-white/2 overflow-hidden"
+          className="rounded-[2.5rem] border border-overlay/10 bg-overlay/2 overflow-hidden"
         >
           {/* Image area */}
           <Skeleton className="h-72 w-full" />
@@ -185,7 +185,7 @@ export function EventsListSkeleton({ count = 3 }) {
               <Skeleton className="h-4 w-full rounded" />
               <Skeleton className="h-4 w-2/3 rounded" />
             </div>
-            <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+            <div className="pt-6 border-t border-overlay/5 flex items-center justify-between">
               <Skeleton className="h-4 w-32 rounded" />
               <Skeleton className="h-6 w-6 rounded" />
             </div>
@@ -209,7 +209,7 @@ export function AdminSkeleton() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Sidebar tabs */}
           <div className="md:col-span-1">
-            <div className="rounded-2xl p-2 border border-white/10 bg-white/2 space-y-2">
+            <div className="rounded-2xl p-2 border border-overlay/10 bg-overlay/2 space-y-2">
               <Skeleton className="h-12 w-full rounded-xl" />
               <Skeleton className="h-12 w-full rounded-xl" />
             </div>
@@ -220,7 +220,7 @@ export function AdminSkeleton() {
             {[1, 2, 3, 4, 5].map((i) => (
               <div
                 key={i}
-                className="flex items-center gap-4 p-5 rounded-2xl border border-white/10 bg-white/2"
+                className="flex items-center gap-4 p-5 rounded-2xl border border-overlay/10 bg-overlay/2"
               >
                 <Skeleton className="w-14 h-14 rounded-full shrink-0" />
                 <div className="flex-1 space-y-2">
@@ -268,7 +268,7 @@ export function AttendeesSkeleton({ count = 5 }) {
       {Array.from({ length: count }).map((_, i) => (
         <div
           key={i}
-          className="flex items-center justify-between p-5 rounded-2xl border border-white/10 bg-white/2"
+          className="flex items-center justify-between p-5 rounded-2xl border border-overlay/10 bg-overlay/2"
         >
           <div className="flex items-center gap-4">
             <Skeleton className="w-14 h-14 rounded-full shrink-0" />
@@ -332,7 +332,7 @@ export function EventsSectionSkeleton() {
 
 function EventListItemSkeleton() {
   return (
-    <div className="flex gap-4 p-4 rounded-xl border border-white/10">
+    <div className="flex gap-4 p-4 rounded-xl border border-overlay/10">
       {/* Date box */}
       <Skeleton className="h-14 w-14 rounded-lg shrink-0" />
       {/* Text */}

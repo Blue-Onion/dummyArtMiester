@@ -380,7 +380,7 @@ const Page = () => {
                     {art.Tags?.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs bg-white/20 px-2 py-0.5 rounded-full"
+                        className="text-xs bg-overlay/20 px-2 py-0.5 rounded-full"
                       >
                         {tag}
                       </span>

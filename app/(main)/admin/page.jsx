@@ -78,11 +78,11 @@ export default function Page() {
         >
           {/* Tab Navigation Sidebar */}
           <div className="md:col-span-1">
-            <TabsList className="bg-white/5 border border-white/10 p-2 rounded-2xl flex md:flex-col gap-2 w-full md:sticky md:top-24 h-auto">
+            <TabsList className="bg-overlay/5 border border-overlay/10 p-2 rounded-2xl flex md:flex-col gap-2 w-full md:sticky md:top-24 h-auto">
               {canAssignRoles(user) && (
                 <TabsTrigger
                   value="manage-account"
-                  className="rounded-xl w-full text-content text-sm py-3 px-4 flex items-center justify-center md:justify-start gap-2.5 transition-all data-[state=active]:bg-red-600 data-[state=active]:text-content hover:bg-white/5 cursor-pointer font-medium"
+                  className="rounded-xl w-full text-content text-sm py-3 px-4 flex items-center justify-center md:justify-start gap-2.5 transition-all data-[state=active]:bg-red-600 data-[state=active]:text-content hover:bg-overlay/5 cursor-pointer font-medium"
                 >
                   <Users className="w-4 h-4" />
                   <span>Accounts</span>
@@ -91,7 +91,7 @@ export default function Page() {
               {canModerate(user) && (
                 <TabsTrigger
                   value="approve-art"
-                  className="rounded-xl w-full text-content text-sm py-3 px-4 flex items-center justify-center md:justify-start gap-2.5 transition-all data-[state=active]:bg-red-600 data-[state=active]:text-content hover:bg-white/5 cursor-pointer font-medium"
+                  className="rounded-xl w-full text-content text-sm py-3 px-4 flex items-center justify-center md:justify-start gap-2.5 transition-all data-[state=active]:bg-red-600 data-[state=active]:text-content hover:bg-overlay/5 cursor-pointer font-medium"
                 >
                   <Palette className="w-4 h-4" />
                   <span>Artworks</span>

@@ -66,11 +66,11 @@ if(loading){
             {attendees.map((attendee) => (
               <div
                 key={attendee.ID}
-                className="flex items-center justify-between p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/8 transition"
+                className="flex items-center justify-between p-5 rounded-2xl border border-overlay/10 bg-overlay/5 backdrop-blur-xl hover:bg-overlay/8 transition"
               >
                 {/* Left Side */}
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10">
+                  <div className="w-14 h-14 rounded-full overflow-hidden border border-overlay/10">
                     <img
                       src={attendee?.Image?.String || "/placeholder.png"}
                       alt={attendee?.Name}
@@ -126,7 +126,7 @@ if(loading){
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 border border-dashed border-white/10 rounded-3xl">
+          <div className="text-center py-20 border border-dashed border-overlay/10 rounded-3xl">
             <p className="text-gray-500 text-lg">No attendees found</p>
           </div>
         )}

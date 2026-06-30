@@ -159,10 +159,10 @@ const ManageAccount = ({ users }) => {
       </div>
 
       {/* Metrics Section */}
-      <div className="flex flex-wrap gap-2.5 pt-1">
+      <div className="flex  flex-wrap gap-2.5 pt-1">
         <Badge
           variant="outline"
-          className="px-3 py-1 bg-white/5 border-white/10 text-gray-300 text-xs font-normal gap-1.5 rounded-xl"
+          className="px-3 py-1 bg-overlay/5 border-overlay/10 text-gray-300 text-xs font-normal gap-1.5 rounded-xl"
         >
           <Users className="w-3.5 h-3.5 text-red-500" />
           <span>Total Users:</span>
@@ -171,7 +171,7 @@ const ManageAccount = ({ users }) => {
 
         <Badge
           variant="outline"
-          className="px-3 py-1 bg-white/5 border-white/10 text-gray-300 text-xs font-normal gap-1.5 rounded-xl"
+          className="px-3 py-1 bg-overlay/5 border-overlay/10 text-gray-300 text-xs font-normal gap-1.5 rounded-xl"
         >
           <AlertCircle className="w-3.5 h-3.5 text-red-500" />
           <span>Pending:</span>
@@ -180,7 +180,7 @@ const ManageAccount = ({ users }) => {
 
         <Badge
           variant="outline"
-          className="px-3 py-1 bg-white/5 border-white/10 text-gray-300 text-xs font-normal gap-1.5 rounded-xl"
+          className="px-3 py-1 bg-overlay/5 border-overlay/10 text-gray-300 text-xs font-normal gap-1.5 rounded-xl"
         >
           <Ban className="w-3.5 h-3.5 text-red-500" />
           <span>Banned:</span>
@@ -189,7 +189,7 @@ const ManageAccount = ({ users }) => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center p-4 rounded-2xl border border-overlay/10 bg-overlay/5 backdrop-blur-md">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <input
@@ -197,7 +197,7 @@ const ManageAccount = ({ users }) => {
             placeholder="Search users by name or email..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 transition-all"
+            className="w-full bg-overlay/5 border border-overlay/10 rounded-xl pl-10 pr-4 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 transition-all"
           />
         </div>
 
@@ -209,7 +209,7 @@ const ManageAccount = ({ users }) => {
             <select
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
-              className="bg-frosty/40 border border-white/10 rounded-xl px-3 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50"
+              className="bg-frosty/40 border border-overlay/10 rounded-xl px-3 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50"
             >
               <option value="all">All Roles</option>
               {ROLE_ORDER.map((role) => (
@@ -227,7 +227,7 @@ const ManageAccount = ({ users }) => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="bg-frosty/40 border border-white/10 rounded-xl px-3 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50"
+              className="bg-frosty/40 border border-overlay/10 rounded-xl px-3 py-2 text-sm text-content focus:outline-none focus:ring-2 focus:ring-red-500/50"
             >
               <option value="all">All</option>
               <option value="pending">Pending</option>
@@ -268,7 +268,7 @@ const ManageAccount = ({ users }) => {
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all text-left ${
                     selectedRole === role
                       ? "border-red-500 bg-red-500/10 text-content"
-                      : "border-white/10 bg-white/5 text-gray-300 hover:border-white/20 hover:bg-white/10"
+                      : "border-overlay/10 bg-overlay/5 text-gray-300 hover:border-overlay/20 hover:bg-overlay/10"
                   }`}
                 >
                   <span className="text-red-400">
@@ -339,14 +339,14 @@ const ManageAccount = ({ users }) => {
           return (
             <div
               key={user.ID}
-              className="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
+              className="p-5 rounded-2xl border shadow-md border-overlay/10 bg-overlay/5 backdrop-blur-lg hover:bg-overlay/10 hover:border-overlay/20 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
             >
               <div className="flex items-center gap-4">
                 <div className="relative">
                   <img
                     src={user.Image?.String || "/default.jpeg"}
                     alt={user.Name}
-                    className="w-14 h-14 rounded-full object-cover border border-white/10 shadow-inner"
+                    className="w-14 h-14 rounded-full object-cover border border-overlay/10 shadow-inner"
                   />
                   {user.Status === "approved" && (
                     <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-black rounded-full" />
@@ -381,19 +381,19 @@ const ManageAccount = ({ users }) => {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="text-gray-400 hover:text-content hover:bg-white/10 rounded-full h-9 w-9"
+                      className="text-gray-400 hover:text-content hover:bg-overlay/10 rounded-full h-9 w-9"
                     >
                       <MoreVertical className="w-5 h-5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                     align="end"
-                    className="bg-[#181818] border border-white/10 text-content rounded-xl shadow-2xl p-1.5 min-w-44"
+                    className="bg-[#181818] border border-overlay/10 text-content rounded-xl shadow-2xl p-1.5 min-w-44"
                   >
                     <DropdownMenuLabel className="text-gray-400 text-xs px-2.5 py-1.5">
                       Actions
                     </DropdownMenuLabel>
-                    <DropdownMenuSeparator className="bg-white/10" />
+                    <DropdownMenuSeparator className="bg-overlay/10" />
 
                     {user.Status === "pending" && (
                       <>
@@ -412,7 +412,7 @@ const ManageAccount = ({ users }) => {
                           <UserX className="w-4 h-4 text-red-400" />
                           <span>Reject User</span>
                         </DropdownMenuItem>
-                        <DropdownMenuSeparator className="bg-white/10" />
+                        <DropdownMenuSeparator className="bg-overlay/10" />
                       </>
                     )}
 
@@ -459,7 +459,7 @@ const ManageAccount = ({ users }) => {
         })}
 
         {filteredUsers.length === 0 && (
-          <div className="text-center py-16 text-gray-500 border border-white/5 rounded-2xl bg-white/5 border-dashed">
+          <div className="text-center py-16 text-gray-500 border border-overlay/5 rounded-2xl bg-overlay/5 border-dashed">
             No users match the search/filter criteria.
           </div>
         )}

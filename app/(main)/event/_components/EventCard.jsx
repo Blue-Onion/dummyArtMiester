@@ -81,7 +81,7 @@ export const EventCard = ({ event, isAdmin }) => {
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-red-500/10 cursor-pointer h-full"
+      className="group relative overflow-hidden rounded-[2.5rem] border border-overlay/10 bg-overlay/5 backdrop-blur-md transition-all duration-300 hover:border-overlay/20 hover:shadow-2xl hover:shadow-red-500/10 cursor-pointer h-full"
     >
       {/* Image Section */}
       <div className="relative h-72 w-full overflow-hidden">
@@ -95,7 +95,7 @@ export const EventCard = ({ event, isAdmin }) => {
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent" />
 
         {/* Date Badge */}
-        <div className="absolute top-6 left-6 flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-frosty/60 backdrop-blur-xl border border-white/10 shadow-xl">
+        <div className="absolute top-6 left-6 flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-frosty/60 backdrop-blur-xl border border-overlay/10 shadow-xl">
           <span className="text-content font-bold text-2xl leading-none">
             {new Date(event?.EventDate).getDate()}
           </span>
@@ -112,7 +112,7 @@ export const EventCard = ({ event, isAdmin }) => {
               <DropdownMenuTrigger asChild>
                 <button
                   onClick={(e) => e.stopPropagation()}
-                  className="p-2 rounded-xl bg-frosty/50 backdrop-blur-xl border border-white/10 text-content hover:bg-white/10 transition-all"
+                  className="p-2 rounded-xl bg-frosty/50 backdrop-blur-xl border border-overlay/10 text-content hover:bg-overlay/10 transition-all"
                 >
                   <MoreVertical size={18} />
                 </button>
@@ -120,7 +120,7 @@ export const EventCard = ({ event, isAdmin }) => {
 
               <DropdownMenuContent
                 align="end"
-                className="w-44 bg-frosty/90 border border-white/10 text-content"
+                className="w-44 bg-frosty/90 border border-overlay/10 text-content"
               >
                 <DropdownMenuItem
                   onClick={(e) => {
@@ -158,7 +158,7 @@ export const EventCard = ({ event, isAdmin }) => {
                 ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
                 : eventState === "Ongoing"
                   ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                  : "bg-white/10 text-gray-300 border border-white/10"
+                  : "bg-overlay/10 text-gray-300 border border-overlay/10"
             }`}
           >
             {eventState === "Upcoming"
@@ -180,7 +180,7 @@ export const EventCard = ({ event, isAdmin }) => {
           {event?.Description?.String}
         </p>
 
-        <div className="mt-auto pt-6 flex items-center justify-between border-t border-white/5">
+        <div className="mt-auto pt-6 flex items-center justify-between border-t border-overlay/5">
           <div className="flex items-center gap-3 text-[11px] font-bold text-gray-500 uppercase tracking-[0.15em]">
             <Calendar size={16} className="text-red-500" />
             <span>{event?.Venue?.String || "ART SOCIETY EVENT"}</span>

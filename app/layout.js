@@ -22,10 +22,16 @@ export default function RootLayout({ children }) {
                 root.classList.add("dark");
                 root.style.setProperty("--color-frosty", "#000");
                 root.style.setProperty("--color-content", "#fff");
+                root.style.setProperty("--overlay", "#fff");
+                root.style.setProperty("--text-gradient-from", "#fff");
+                root.style.setProperty("--text-gradient-to", "#999");
               } else {
                 root.classList.remove("dark");
                 root.style.setProperty("--color-frosty", "#F0F6FA");
                 root.style.setProperty("--color-content", "#000");
+                root.style.setProperty("--overlay", "#000");
+                root.style.setProperty("--text-gradient-from", "#000");
+                root.style.setProperty("--text-gradient-to", "#555");
               }
             })();
           `

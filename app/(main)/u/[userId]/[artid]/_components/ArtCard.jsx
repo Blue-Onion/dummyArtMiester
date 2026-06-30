@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const ArtCard = ({ art, className = "" }) => {
   return (
     <Link href={`/art/${art.id}`} className={`block group w-full h-full min-h-[250px] ${className}`}>
-        <div className="glass rounded-2xl overflow-hidden relative border border-white/5 w-full h-full">
+        <div className="glass rounded-2xl overflow-hidden relative border border-overlay/5 shadow-sm w-full h-full">
             <img 
                 src={art.url} 
                 alt={art.title} 

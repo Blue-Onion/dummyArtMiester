@@ -43,7 +43,7 @@ export default function HistoryTimeline({ batches }) {
                 {/* Timeline Card Column */}
                 <div className="w-full md:w-[45%]">
                   <Link href={`/history/${batch.id}`} className="group block">
-                    <Card className="border border-white/10 bg-neutral-900/40 backdrop-blur-md overflow-hidden rounded-2xl transition-all duration-500 hover:border-red-900/50 hover:bg-neutral-900/60 hover:shadow-[0_0_30px_rgba(153,27,27,0.15)] transform group-hover:-translate-y-1.5">
+                    <Card className="border border-overlay/10 bg-neutral-900/40 backdrop-blur-md overflow-hidden rounded-2xl transition-all duration-500 hover:border-red-900/50 hover:bg-neutral-900/60 hover:shadow-[0_0_30px_rgba(153,27,27,0.15)] transform group-hover:-translate-y-1.5">
                       {/* Banner Image Container */}
                       <div className="relative h-48 sm:h-56 w-full overflow-hidden">
                         <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/30 to-transparent z-10" />
@@ -77,7 +77,7 @@ export default function HistoryTimeline({ batches }) {
                         </p>
 
                         {/* Footer details within Card */}
-                        <div className="pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-4">
+                        <div className="pt-4 border-t border-overlay/5 flex flex-wrap items-center justify-between gap-4">
                           {/* Members overlap group */}
                           <div className="flex items-center gap-3">
                             <div className="flex -space-x-2">

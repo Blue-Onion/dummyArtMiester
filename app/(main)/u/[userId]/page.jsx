@@ -204,7 +204,7 @@ export default function ArtistProfile() {
                 {role === "artist" && (
                   <Link
                     href="/onboarding"
-                    className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 p-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-md"
+                    className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 p-2 rounded-full bg-overlay/10 hover:bg-overlay/20 border border-overlay/10 backdrop-blur-md"
                   >
                     <Pencil size={18} className="text-content/80" />
                   </Link>
@@ -241,7 +241,7 @@ export default function ArtistProfile() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-40 grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Sidebar Info */}
         <div className="lg:col-span-1 space-y-8">
-          <div className="glass rounded-2xl p-8 border border-white/5">
+          <div className="glass rounded-2xl p-8 border border-overlay/5">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <Palette size={20} className="text-accent" />
               Artist Details
@@ -282,13 +282,13 @@ export default function ArtistProfile() {
 
               {(artist?.SocialLinks?.instagram ||
                 artist?.SocialLinks?.youtube) && (
-                <div className="pt-4 border-t border-white/5 flex gap-4">
+                <div className="pt-4 border-t border-overlay/5 flex gap-4">
                   {artist?.SocialLinks?.instagram && (
                     <a
                       href={artist.SocialLinks.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all group"
+                      className="w-12 h-12 rounded-xl border border-overlay/10 flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all group"
                     >
                       <Image
                         src="/instagram.svg"
@@ -305,7 +305,7 @@ export default function ArtistProfile() {
                       href={artist.SocialLinks.youtube}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all group"
+                      className="w-12 h-12 rounded-xl border border-overlay/10 flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all group"
                     >
                       <Image
                         src="/youtube.svg"
@@ -355,7 +355,7 @@ export default function ArtistProfile() {
               {artistArtworks?.map((art) => (
                 <div
                   key={art.ID}
-                  className="group relative aspect-square rounded-2xl overflow-hidden glass border border-white/5"
+                  className="group relative aspect-square rounded-2xl overflow-hidden glass border border-overlay/5"
                 >
                   {role === "artist" && (
                     <div className="absolute top-3 right-3 z-20">

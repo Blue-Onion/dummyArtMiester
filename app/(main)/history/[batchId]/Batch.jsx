@@ -50,7 +50,7 @@ const Batch = () => {
 
       {/* Hero Banner Section */}
       <section className="w-full mt-6">
-        <div className="relative w-full h-[320px] md:h-[450px] overflow-hidden border-y border-white/10">
+        <div className="relative w-full h-[320px] md:h-[450px] overflow-hidden border-y border-overlay/10">
           <Image
             src={batch.bannerImage}
             alt={batch.name}
@@ -92,7 +92,7 @@ const Batch = () => {
         {/* Left Column: About & Achievements */}
         <div className="lg:col-span-7 space-y-8">
           {/* About Cohort */}
-          <div className="rounded-2xl p-6 sm:p-8 border border-white/10 bg-neutral-950/40 backdrop-blur-md">
+          <div className="rounded-2xl p-6 sm:p-8 border border-overlay/10 bg-neutral-950/40 backdrop-blur-md">
             <h2 className="text-2xl font-serif text-content mb-4">
               About This Cohort
             </h2>
@@ -102,7 +102,7 @@ const Batch = () => {
           </div>
 
           {/* Highlights & Milestones */}
-          <div className="rounded-2xl p-6 sm:p-8 border border-white/10 bg-neutral-950/40 backdrop-blur-md">
+          <div className="rounded-2xl p-6 sm:p-8 border border-overlay/10 bg-neutral-950/40 backdrop-blur-md">
             <h3 className="text-xl font-serif text-content mb-6 flex items-center gap-2">
               <Award size={20} className="text-red-500" />
               Cohort Milestones & Legacy
@@ -124,7 +124,7 @@ const Batch = () => {
 
         {/* Right Column: Member Roster Grid */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="rounded-2xl p-6 border border-white/10 bg-neutral-950/40 backdrop-blur-md">
+          <div className="rounded-2xl p-6 border border-overlay/10 bg-neutral-950/40 backdrop-blur-md">
             <h3 className="text-xl font-serif text-content mb-6 flex items-center gap-2">
               <Users size={20} className="text-red-500" />
               Cohort Members
@@ -134,11 +134,11 @@ const Batch = () => {
               {batch.members.map((member, index) => (
                 <Card 
                   key={index}
-                  className="bg-neutral-900/40 border border-white/5 hover:border-red-950/60 hover:bg-neutral-900/60 transition-all duration-300 rounded-xl"
+                  className="bg-neutral-900/40 border border-overlay/5 hover:border-red-950/60 hover:bg-neutral-900/60 transition-all duration-300 rounded-xl"
                 >
                   <CardContent className="p-4 flex items-center gap-4">
                     {/* Member Avatar */}
-                    <div className="relative h-12 w-12 rounded-full overflow-hidden border border-white/10 shrink-0">
+                    <div className="relative h-12 w-12 rounded-full overflow-hidden border border-overlay/10 shrink-0">
                       <Image
                         src={member.avatar}
                         alt={member.name}

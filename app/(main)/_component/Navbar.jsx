@@ -82,7 +82,7 @@ useEffect(() => {
        <AdminMenu/>
       )}
 
-      <div className="relative h-12 w-12 overflow-hidden flex items-center justify-center rounded-full border border-white/20">
+      <div className="relative h-12 w-12 overflow-hidden flex items-center justify-center rounded-full border border-overlay/20">
         <UserMenu user={user} />
       </div>
     </>

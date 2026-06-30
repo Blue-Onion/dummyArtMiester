@@ -57,7 +57,7 @@ const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
       />
 
       {preview ? (
-        <div className="relative w-full rounded-xl overflow-hidden border border-white/10">
+        <div className="relative w-full rounded-xl overflow-hidden border border-overlay/10">
           <img src={preview} className="w-full max-h-48 object-cover" />
 
           <div className="absolute top-2 right-2 flex gap-2">
@@ -73,7 +73,7 @@ const ImageInput = ({ label, inputRef, existingImage, onFileChange }) => {
       ) : (
         <div
           onClick={() => inputRef.current?.click()}
-          className="w-full bg-white/5 border border-white/10 border-dashed rounded-xl px-4 py-6 text-center cursor-pointer"
+          className="w-full bg-overlay/5 border border-overlay/10 border-dashed rounded-xl px-4 py-6 text-center cursor-pointer"
         >
           <p className="text-content/40 text-sm">Click to upload image</p>
         </div>
@@ -256,7 +256,7 @@ const CreateEventPage = ({ id }) => {
             type="text"
             placeholder="Art Exhibition 2026"
             {...register("name")}
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3"
+            className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3"
           />
           {errors.name?.message && (
             <p className="text-red-800/50 text-sm">{errors.name?.message}</p>
@@ -272,7 +272,7 @@ const CreateEventPage = ({ id }) => {
             {...register("description")}
             rows={5}
             placeholder="Tell people about your event..."
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 resize-none"
+            className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3 resize-none"
           />
           {errors.description?.message && (
             <p className="text-red-800/50 text-sm">
@@ -288,7 +288,7 @@ const CreateEventPage = ({ id }) => {
             {...register("venue")}
             type="text"
             placeholder="Delhi Convention Centre"
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3"
+            className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3"
           />
           {errors.venue?.message && (
             <p className="text-red-800/50 text-sm">{errors.venue?.message}</p>
@@ -300,7 +300,7 @@ const CreateEventPage = ({ id }) => {
           <label className="text-sm font-medium text-content/80">Status</label>
           <select
             {...register("status")}
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3"
+            className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3"
           >
             <option value="online">Online</option>
             <option value="offline">Offline</option>
@@ -315,7 +315,7 @@ const CreateEventPage = ({ id }) => {
           <input
             type="date"
             {...register("date")}
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3"
+            className="w-full bg-overlay/5 border border-overlay/10 rounded-xl px-4 py-3"
           />
           {errors.date?.message && (
             <p className="text-red-800/50 text-sm">{errors.date?.message}</p>
