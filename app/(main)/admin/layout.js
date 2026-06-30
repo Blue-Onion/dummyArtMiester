@@ -12,5 +12,5 @@ export default function layout({ children }) {
     if (user && !canModerate(user)) router.push("/");
   }, [user]);
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 }
