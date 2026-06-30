@@ -1,7 +1,7 @@
 "use client";
 import useFetch from "@/hooks/useFetch";
 import { onBoardingSchema } from "@/schema/user";
-import { upload, uploadDummy } from "@/service/upload";
+import { upload } from "@/service/upload";
 import { updateUser } from "@/service/user";
 import { useAuthStore } from "@/store/user";
 import { zodResolver } from "@hookform/resolvers/zod";

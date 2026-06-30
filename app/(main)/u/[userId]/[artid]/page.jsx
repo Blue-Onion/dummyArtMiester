@@ -86,7 +86,7 @@ export default function ArtPage() {
       toast.error(error.message || "Failed to update artwork status");
     }
     if (verdict?.Success && !loading && !error) {
-      toast.success(`Artwork successfully ${verdict.Data.Status}`);
+      router.push(`/u/${userId}`);
     }
   }, [error, verdict]);
   const {
@@ -109,7 +109,6 @@ export default function ArtPage() {
     }
     router.push(`/u/${userId}`);
   }, [deletedData, deleting]);
-
 
   if (fetchingArt) {
     return <ArtDetailSkeleton />;
@@ -152,7 +151,6 @@ export default function ArtPage() {
           {/* LEFT SIDE - Artwork */}
           <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-overlay/5 group min-h-[500px] flex items-center justify-center bg-frosty/40">
             {/* Action Buttons */}
-    
 
             {/* Artwork Image */}
             <div className="md:col-span-2 glass rounded-3xl overflow-hidden relative border border-overlay/5 group min-h-[500px] bg-frosty/40">
